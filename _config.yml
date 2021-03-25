@@ -25,11 +25,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /docs/:title:output_ext
 
 # Build settings
-theme: jekyll-theme-midnight
+# theme: jekyll-theme-midnight
+# theme: jekyll-theme-minimal
+theme: jekyll-theme-dinky
 
 plugins:
   - jekyll-feed
   - jekyll-diagrams
+  - jekyll-mermaid
 
 github: [metadata]
 
@@ -40,6 +43,19 @@ defaults:
     values:
       layout: "default"
       category: "wiki"
+
+gems:
+  - jekyll-diagrams
+
+diagrams:
+  graphviz:
+    engine: dot
+    options: '-Tsvg'
+  diag:
+    options: '-Tsvg --nodoctype'
+
+mermaid:
+  src: '../assets/js/mermaid.min.js'
 
 # Exclude from processing.
 # The following items will not be processed, by default.

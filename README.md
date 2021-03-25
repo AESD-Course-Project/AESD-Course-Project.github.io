@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: AESD Course Project
 permalink: ./
 theme: jekyll-theme-midnight
