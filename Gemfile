@@ -2,12 +2,13 @@
 
 source 'https://rubygems.org'
 
-#gem "github-pages", "~> 213", group: :jekyll_plugins
+gem "github-pages", "~> 213", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do    
   gem "jekyll-feed", "~> 0.12"           
   gem 'jekyll-diagrams'
+  gem 'jekyll-mermaid'
 end
 
 gemspec
