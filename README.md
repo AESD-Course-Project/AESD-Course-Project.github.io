@@ -42,17 +42,19 @@ Intended hardware platforms for this project:
 - [Project Schedule]()
 - [Caleb's Repository]()
 - [Arpit's Repository](https://github.com/cu-ecen-5013/final-project-arpit6232)
-- [Zach's Repository]()
+- [Zach's Repository](https://github.com/cu-ecen-5013/final-project-ZachTurner07)
 
 ### Group's Overview 
 #### Team Project Members 
-- Caleb: Yocto Image Setup and build for Jetson Tegra (TBM)
-- Zach: Communication Between Subsystems (Serial/I2C/USB/Bluetooth) (TBM)
+- Caleb: Yocto Image Setup and build for Jetson Tegra (TBD)
+- Zach: Communication Between Subsystems (Serial/I2C/USB/Bluetooth) (TBR)
 - Arpit: Machine Learning Framework and TinyML Setup for scalable setup (TBM) 
 
 * Things left -> Alarm driver, alarm hardware, Kernel Modules devel ...
 
+> **_NOTE:_**  TBD - To be Defined, TBR - To be Refined, TBM - To be modified
 ### Schedule Page
+
 - [Project Schedule]()
 
 <!-- ### Communication Between Subsystems
