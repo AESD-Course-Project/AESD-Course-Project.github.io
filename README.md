@@ -2,7 +2,6 @@
 layout: default
 title: AESD Course Project
 permalink: ./
-theme: jekyll-theme-midnight
 ---
 
 # Quick Overview Below. See our [Project Wiki](/docs/WikiHome.md) for more!
