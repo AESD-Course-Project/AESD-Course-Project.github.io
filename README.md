@@ -41,14 +41,14 @@ Intended hardware platforms for this project:
 - Creating Modules for Arduino BLE 33 
 - USB Interface for Jetson and Arduino
 - Deplying Tiny Machine Learning (TinyML)
-- Case study for TinyML
+- [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/docs/TinyML.md)
 
 ## Shared Material 
 - [Flashing Image to SD Card](https://github.com/cu-ecen-5013/buildroot-assignments-base/wiki/Flashing-Images-to-SDCard)
 
 ## Source Code Organization 
 - [Project Overview](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/gh-pages/README.md)
-- [Project Schedule](TODO)
+- [Project Schedule](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page)
 - [Caleb's Repository](https://github.com/cu-ecen-5013/final-project-CalebProvost)
 - [Arpit's Repository](https://github.com/cu-ecen-5013/final-project-arpit6232)
 - [Zach's Repository](https://github.com/cu-ecen-5013/final-project-ZachTurner07)

@@ -16,7 +16,7 @@ Tiny machine learning, or TinyML, is an emerging field that is at the intersecti
 While  [TensorFlow](https://www.tensorflow.org/) is written with fast custom C++ code under the hood, it has a high level Python API. A custom neural network using Tensorflow, [TensorFlow Lite](https://www.tensorflow.org/) and [TensorFlow Micro](https://www.tensorflow.org/lite/microcontrollers)
 
 <!-- Insert Integration TinyML image here  -->
-![Integration](images/TinyML_integration.png = 100x100)
+<!-- ![Integration](images/TinyML_integration.png=100x100) -->
 
 TinyML helps to provide a unique solution by summarizing and analyzing data at the edge on low power embedded devices, TinyML can provide smart summary statistics that take these previously lost patterns, anomalies, and advanced analytics into account. 
 
@@ -90,7 +90,7 @@ Model engineering is about design and performance analysis.
 ### Model Deployment 
 The Model trained at the Data Centres or with sources of higher compute have to deployed on small embedded devices
 - Model Conversion: Conversion of the models can be undetaken both from model design and memory mapping. 
-    - [Neural Network Pruning](https://towardsdatascience.com pruning-deep-neural-network-56cae1ec5505) 
+    - [Neural_Network_Pruning](https://towardsdatascience.com pruning-deep-neural-network-56cae1ec5505) 
     - [Precision Quantization](https://www.tensorflow.org/lite/performance/post_training_quantization) 
     - [Knowledge Distillation](https://keras.io/examples/vision/knowledge_distillation/)
 - Performace and energy aware optimization: Tiny Machine Learning application have to be fast to respond. Latency Vs Accuracy can be pivotal in the success of the application and more so if power and energy usage have to be limited to the micro-controller under use. 
