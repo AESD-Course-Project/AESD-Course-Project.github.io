@@ -61,6 +61,9 @@ Intended hardware platforms for this project:
   - GPIO communication to show successful inferencing... how it interfaces to BSP
   - Trigger on board LED for demonstration purposes
 - Arpit: Machine Learning Framework and TinyML Setup for setup
+  - Dive Deep into Tiny Machine Learning deployment
+  - Integrate Arduino Nano BLE and OV7675 Camera to detect Person in frame
+  - Code Porting and Tensorflow dependencies. 
 
 * Things left -> Alarm driver, alarm hardware, Kernel Modules devel ...
 
