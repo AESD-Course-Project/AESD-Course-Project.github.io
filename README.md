@@ -44,11 +44,6 @@ Intended hardware platforms for this project:
 - [Arduino Nano 33 BLE](https://store.arduino.cc/usa/tiny-machine-learning-kit)
 - [OV7675 Camera](https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/)
 
-## Platform Setups Readme Guides and Guidelines
-- [Jetson Nano](docs/install_jetson_yocto.md)
-- [Arduino Nano 33 BLE](docs/arduino_setup.md)
-
-
 ## Open Source Projects 
 - [Open Soruce Projects](https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md)
 
@@ -61,7 +56,7 @@ Intended hardware platforms for this project:
 ## New Content 
 - [Yocto Image for Jetson Nano](docs/install_jetson_yocto.md) 
 - Creating Modules and scripts for Arduino BLE 33 
-- USB Interface for Jetson and Arduino
+- [Interface for Jetson and Arduino](docs/arduino_setup.md)
 - Deplying Tiny Machine Learning (TinyML)
 - [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/docs/TinyML.md)
 
