@@ -35,6 +35,8 @@ title: Arduino Setup
         - Pins should be connected as follows 
 
         - Table of Pins Connections
+
+        
 Description | Camera Module Pin | Microcontroller Board Pin  |
 VCC / 3.3V | 1 | 3.3V | 
 GND | 2 | GND | 
