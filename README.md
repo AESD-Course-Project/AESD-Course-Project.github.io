@@ -54,7 +54,7 @@ Intended hardware platforms for this project:
 - Init Scripts and Rootfs Overlays
 
 ## New Content 
-- Yocto Image for Jetson Nano 
+- [Yocto Image for Jetson Nano](docs/install_jetson_yocto.md) 
 - Creating Modules and scripts for Arduino BLE 33 
 - USB Interface for Jetson and Arduino
 - Deplying Tiny Machine Learning (TinyML)
