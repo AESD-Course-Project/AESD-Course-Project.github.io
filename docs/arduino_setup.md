@@ -23,21 +23,22 @@ title: Arduino Setup
 
     - Wiring Up Individual Parts 
         - Slot the Nano 33 BLE Sense board into a solderless breadboard.
-            - ![Step 5](images/TinyML_6.png)  
+            - ![Step 6](images/TinyML_6.png)  
         - Attach a few headers to OV7675 camera. 
-            - ![Step 5](images/TinyML_7.png)           
+            - ![Step 7](images/TinyML_7.png)           
         - Below we’ve mapped these OV7675 module pin numbers onto a fritzing (wiring) diagram for the Arduino Nano 33 BLE sense (assuming it is placed into a breadboard):  
-            - ![Step 5](images/TinyML_8.png)        
+            - ![Step 8](images/TinyML_8.png)        
 
         - Below is the general pinout for Arduino IDE
-            - ![Step 5](images/TinyML_9.png)        
+            - ![Step 9](images/TinyML_9.png)        
 
         - Pins should be connected as follows 
 
         - Table of Pins Connections
 
-        
+
 Description | Camera Module Pin | Microcontroller Board Pin  |
+--- | --- | --- |
 VCC / 3.3V | 1 | 3.3V | 
 GND | 2 | GND | 
 SIOC / SCL | 3 | SCL / A5 |
@@ -59,8 +60,8 @@ NC  | 18 | -- |
 PEN / RST  | 19 | A2 | 
 PWDN / PDN  | 20 | A3 |
 
-        - Final Layout 
-            - ![Step 5](images/TinyML_10.png)        
+- Final Layout 
+    - ![Step 10](images/TinyML_10.png)        
 
 
 ## Driver and Libraries Installation for Arduino Setup
