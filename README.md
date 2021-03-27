@@ -44,6 +44,11 @@ Intended hardware platforms for this project:
 - [Arduino Nano 33 BLE](https://store.arduino.cc/usa/tiny-machine-learning-kit)
 - [OV7675 Camera](https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/)
 
+## Platform Setups Readme Guides and Guidelines
+- [Jetson Nano](docs/install_jetson_yocto.md)
+- [Arduino Nano 33 BLE](docs/arduino_setup.md)
+
+
 ## Open Source Projects 
 - [Open Soruce Projects](https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md)
 
@@ -77,12 +82,10 @@ Intended hardware platforms for this project:
   - serial communication between subsystems
   - GPIO communication to show successful inferencing... how it interfaces to BSP
   - Trigger on board LED for demonstration purposes
-- Arpit: Machine Learning Framework and TinyML Setup for setup
+- Arpit: Machine Learning Framework and TinyML Setup and yocto compatibility. 
   - Dive Deep into Tiny Machine Learning deployment
-  - Integrate Arduino Nano BLE and OV7675 Camera to detect Person in frame
+  - Integrate Camera and peripheral to detect Person in frame. 
   - Code Porting and Tensorflow dependencies. 
-
-* Things left -> Alarm driver, alarm hardware, Kernel Modules devel ...
 
 
 ## Schedule Page

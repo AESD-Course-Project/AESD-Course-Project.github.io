@@ -1,3 +1,7 @@
+---
+title: Jetson Image
+---
+
 # Build Jetson Image 
 
 ## Install Jetson Binaries 
@@ -18,12 +22,12 @@ wget https://developer.nvidia.com/nvsdk-manager $HOME/Downloads
 - Step 2: Review Components and Accept Licenses
     - If you want SDK Manager to download all setup files to a location other than the default path, go to the Download & Install Options located at the bottom of the screen, then select the path you wish to use. 
     - ONLY DOWNLOAD THE FILES, NO INSTALLATION IS NEEDED 
-    - ![Step 1](images/jetson_2.png)
+    - ![Step 2](images/jetson_2.png)
     - Select Continue to proceed to the next step. 
 
 - Step 3: Installation
     - Before the installation begins, SDK Manager prompts you to enter your sudo password. (This should not be needed unless you have selected Install in the previous step). 
-    - ![Step 1](images/jetson_3.png)
+    - ![Step 3](images/jetson_3.png)
     - The display shows the progress of the download and installation of the software. 
     - At the top, you can toggle between the Details and Terminal tabs. The Terminal tab shows detailed information about the download and installation, with any errors highlighted.
     - The necessary binaries should now be installed under $HOME/Downloads/nvidia/skdm_downloads
