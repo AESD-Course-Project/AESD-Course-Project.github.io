@@ -1,2 +1,16 @@
-.jekyll-cache*
-.jekyll-cache/**
+# The following should not be on `master` branch
+
+# Repo and tool extras
+.vscode/
+.editorconfig
+
+# Ruby and jekyll build directories
+.sass-cache/
+.jekyll-metadata/
+.jekyll-cache/
+public/
+vendor/
+.bundle/
+Gemfile.lock
+_site/
+.rubocop.yml
