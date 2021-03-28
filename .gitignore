@@ -9,15 +9,15 @@
 # Ruby and jekyll build directories
 .sass-cache/
 .jekyll-metadata/
+.jekyll-cache/
 public/
 vendor/
 .bundle/
+Gemfile.lock
 
 # `master` branch development stuff
 _config.yml
 Gemfile
-Gemfile.lock
-.jekyll-cache/
 _includes/
 _layouts/
 _sass/
