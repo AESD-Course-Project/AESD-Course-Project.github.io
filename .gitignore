@@ -1,15 +1,26 @@
-# Should not have shown on gh-pages branch
+# The following should not be on `gh-pages` branch
+
+# Repo and tool extras
+.github/
+.vscode/
 .editorconfig
+.gitignore
+
+# Ruby and jekyll build directories
+.sass-cache/
+.jekyll-metadata/
+public/
+vendor/
+.bundle/
+
+# `master` branch development stuff
+_config.yml
 Gemfile
 Gemfile.lock
-.gitignore
-_posts/
-.rubocop.yml
-_config.yml
-.github/
-_includes/
 .jekyll-cache/
+_includes/
 _layouts/
 _sass/
+_posts/
 _site/
-.vscode/
+.rubocop.yml
