@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://aesd-course-project.github.io/src/Project-Overview.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/README.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/src/Schedule.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/src/TinyML.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/src/WikiHome.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/about/</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/src/arduino_setup.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/src/diagrams.html</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/</loc>
+</url>
+<url>
+<loc>https://aesd-course-project.github.io/src/install_jetson_yocto.html</loc>
+</url>
+</urlset>

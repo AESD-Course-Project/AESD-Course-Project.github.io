@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AESD Course Project</title>
+  <meta name="description" content="Course Project for UCB's ECEN 5713 Spring `21">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://AESD-Course-Project.github.io/README.html">
+  <link rel="alternate" type="application/rss+xml" title="AESD Course Project" href="https://AESD-Course-Project.github.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">AESD Course Project</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+          <a class="page-link" href="/src/Project-Overview.html">AESD Course Project</a>
+          
+        
+          
+          <a class="page-link" href="/README.html">AESD Course Project</a>
+          
+        
+          
+          <a class="page-link" href="/src/Schedule.html">Schedule</a>
+          
+        
+          
+          <a class="page-link" href="/src/TinyML.html">TinyML</a>
+          
+        
+          
+          <a class="page-link" href="/src/WikiHome.html">WikiHome</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/src/arduino_setup.html">Arduino Setup</a>
+          
+        
+          
+          <a class="page-link" href="/src/diagrams.html">Diagram Examples</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/src/install_jetson_yocto.html">Jetson Image</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <h1 id="aesd-5713-final-course-project">AESD 5713 Final Course Project</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This project intends to deal with integrating and building a object detection framework and its dectection based on camera and peripheral micro-controller  (Arduino BLE 33 mBed) connected to a NVIDIA Jetson Nano acting as a hub. For the purpose of demonstration we would be attaching a low power camera attached to the micro-controller to act as an inference engine built over Machine Learning Framework to interact with Jetson Nano and form a feedback loop to alarm a system of detection of person in frame of camera. The aim of this project is to train a machine learning model and deploy over low-power, low-memory micro-controllers and form feedback system of the Embedded Network Hub (Jetson). This would include bringing up completely independent hardware which includes the controlling unit, sensors, and software bring up, which includes Operating systems, communication protocols, coding styles, and languages. This type of implementation reduces and to some extent completely removes the inter-dependency of the hardware setup.</p>
+
+<p>Using low-level micro-controllers is cheap and provides more opportunity (future goal) to scale the product under development and testing providing both financial and engineering benefits.</p>
+
+<p>NVIDIA Jetson acts as a server for the peripheral boards(clients). The term voting technique indicates that at any given time the reading that is received from the majority of the sensors will be considered for further actions. Two Camera feeds are available to work with one resides on the NVIDIA Jetson and other connected to the Peripheral Board.</p>
+
+<p>Major Goals:</p>
+
+<ul>
+  <li>Yocto to compile meta-tegra.</li>
+  <li>Running Tegra-demo-distro with Arduino Setup.</li>
+  <li>Setup Camera board and Communication.</li>
+  <li>Build deep-stream or opencv (hardware accelerated) running on Jetson Nano.</li>
+  <li>Run AI Image recognition project working with on image on Host/Hub (Jetson) and Arduino BLE 33 with Camera.</li>
+</ul>
+
+<p>System works as a hard real time system, which captures camera feed at set time interval irrespective of how much time the sensors take to send data over to Nano. The overaching goal of this project would be create a Hub and Client mechanism such that machine learning can be deployed on micro-controllers with and without GPU’s.</p>
+
+<h2 id="block-diagrams">Block Diagrams</h2>
+
+<h3 id="hardware-block-diagrams">Hardware Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h3 id="software-block-diagrams">Software Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h3 id="functional-block-diagrams">Functional Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h2 id="target-build-system">Target Build System</h2>
+<p>We intend to use Yocto as the bring up tool to generate Linux image on NVIDIA Jetson Nano.</p>
+
+<h2 id="hardware-platform">Hardware Platform</h2>
+<p>Intended hardware platforms for this project:</p>
+
+<ul>
+  <li><a href="https://github.com/OE4T/meta-tegra">Jetson Nano</a></li>
+  <li><a href="https://store.arduino.cc/usa/tiny-machine-learning-kit">Arduino Nano 33 BLE</a></li>
+  <li><a href="https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/">OV7675 Camera</a></li>
+</ul>
+
+<h2 id="open-source-projects">Open Source Projects</h2>
+<ul>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md">Open Soruce Projects</a></li>
+</ul>
+
+<h2 id="previously-used-content">Previously Used Content</h2>
+<ul>
+  <li>Yocto</li>
+  <li>Signal handlers</li>
+  <li>Clocks</li>
+  <li>Init Scripts and Rootfs Overlays</li>
+</ul>
+
+<h2 id="new-content">New Content</h2>
+<ul>
+  <li><a href="docs/install_jetson_yocto.md">Yocto Image for Jetson Nano</a></li>
+  <li>Creating Modules and scripts for Arduino BLE 33</li>
+  <li><a href="docs/arduino_setup.md">Interface for Jetson and Arduino</a></li>
+  <li>Deplying Tiny Machine Learning (TinyML)</li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/docs/TinyML.md">Case study for TinyML</a></li>
+</ul>
+
+<h2 id="shared-material">Shared Material</h2>
+<ul>
+  <li><a href="https://github.com/cu-ecen-5013/buildroot-assignments-base/wiki/Flashing-Images-to-SDCard">Flashing Image to SD Card</a></li>
+</ul>
+
+<h2 id="source-code-organization">Source Code Organization</h2>
+<ul>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Project-Overview">Project Overview</a></li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page">Project Schedule</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-CalebProvost">Caleb’s Repository</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232">Arpit’s Repository</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-ZachTurner07">Zach’s Repository</a></li>
+</ul>
+
+<h2 id="groups-overview">Group’s Overview</h2>
+<h3 id="team-project-members">Team Project Members</h3>
+<ul>
+  <li>Caleb: Yocto Image Setup and build for Jetson Tegra</li>
+  <li>Zach: Communication Between Subsystems (Serial/I2C/USB/Bluetooth)
+    <ul>
+      <li>serial communication between subsystems</li>
+      <li>GPIO communication to show successful inferencing… how it interfaces to BSP</li>
+      <li>Trigger on board LED for demonstration purposes</li>
+    </ul>
+  </li>
+  <li>Arpit: Machine Learning Framework and TinyML Setup and yocto compatibility.
+    <ul>
+      <li>Dive Deep into Tiny Machine Learning deployment</li>
+      <li>Integrate Camera and peripheral to detect Person in frame.</li>
+      <li>Code Porting and Tensorflow dependencies.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="schedule-page">Schedule Page</h2>
+
+<ul>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page">Project Schedule</a></li>
+</ul>
+
+<!-- ### Communication Between Subsystems
+Couple of options:
+
+* Serial communication between Jetson and Arduino
+  * Simplist electrical connection, connect USBA on Jetson to MicroUSB on Arduino
+  * Use TTY device on Jetson to communicate serially with Arduino
+  * Could create our own daemon to interact with the TTY device
+
+* I2C between Jetson and Arduino
+  * Lower level protocol, but still supported by both ends
+  * Would need to research how to interact with I2C communication from linux on Jetson
+
+* Potential Stretch (and a big stretch at that)
+  * Install WiFi/Bluettoth network card onto Jetson board
+  * Communicate with Arduino over Bluetooth 
+  * https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/ -->
+
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">AESD Course Project</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>AESD Course Project</li>
+          <li><a href="mailto:Caleb.Provost@Protonmail.edu">Caleb.Provost@Protonmail.edu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/AESD-Course-Project"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">AESD-Course-Project</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Course Project for UCB's ECEN 5713 Spring `21</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

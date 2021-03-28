@@ -10,7 +10,7 @@
   <meta name="description" content="Course Project for UCB's ECEN 5713 Spring `21">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://AESD-Course-Project.github.io/404.html">
+  <link rel="canonical" href="https://AESD-Course-Project.github.io/src/Project-Overview.html">
   <link rel="alternate" type="application/rss+xml" title="AESD Course Project" href="https://AESD-Course-Project.github.io/feed.xml">
 </head>
 
@@ -94,26 +94,96 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <h1 id="aesd-5713-final-course-project">AESD 5713 Final Course Project</h1>
 
-<div class="container">
-  <h1>404</h1>
+<h2 id="block-diagrams">Block Diagrams</h2>
 
-  <p><strong>WHAT DID YOU DO!?</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h3 id="hardware-block-diagrams">Hardware Block Diagrams</h3>
+<p><img src="img/HW_BlockDiag.svg" alt="HW_BlockDiag" /></p>
+
+<h3 id="software-block-diagrams">Software Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h3 id="functional-block-diagrams">Functional Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h2 id="target-build-system">Target Build System</h2>
+<p>We intend to use Yocto as the bring up tool to generate Linux image on NVIDIA Jetson Nano.</p>
+
+<h2 id="hardware-platform">Hardware Platform</h2>
+<p>Intended hardware platforms for this project:</p>
+
+<ul>
+  <li><a href="https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit">Jetson Nano</a></li>
+  <li><a href="https://store.arduino.cc/usa/tiny-machine-learning-kit">Arduino Nano 33 BLE</a></li>
+  <li><a href="https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/">OV7675 Camera</a></li>
+</ul>
+
+<h2 id="open-source-projects">Open Source Projects</h2>
+<ul>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md">Open Soruce Projects</a></li>
+</ul>
+
+<h2 id="previously-used-content">Previously Used Content</h2>
+<ul>
+  <li>Yocto</li>
+  <li>Signal handlers</li>
+  <li>Clocks</li>
+  <li>Init Scripts and Rootfs Overlays</li>
+</ul>
+
+<h2 id="new-content">New Content</h2>
+<ul>
+  <li>Yocto Image for Jetson Nano</li>
+  <li>Creating Modules for Arduino BLE 33</li>
+  <li>USB Interface for Jetson and Arduino</li>
+  <li>Deplying Tiny Machine Learning (TinyML)</li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/docs/TinyML.md">Case study for TinyML</a></li>
+</ul>
+
+<h2 id="shared-material">Shared Material</h2>
+<ul>
+  <li><a href="https://github.com/cu-ecen-5013/buildroot-assignments-base/wiki/Flashing-Images-to-SDCard">Flashing Image to SD Card</a></li>
+</ul>
+
+<h2 id="source-code-organization">Source Code Organization</h2>
+<ul>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/gh-pages/README.md">Project Overview</a></li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page">Project Schedule</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-CalebProvost">Caleb’s Repository</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232">Arpit’s Repository</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-ZachTurner07">Zach’s Repository</a></li>
+</ul>
+
+<h2 id="groups-overview">Group’s Overview</h2>
+<h3 id="team-project-members">Team Project Members</h3>
+<ul>
+  <li>Caleb: Yocto Image Setup and build for Jetson Tegra</li>
+  <li>Zach: Communication Between Subsystems (Serial/I2C/USB/Bluetooth)
+    <ul>
+      <li>serial communication between subsystems</li>
+      <li>GPIO communication to show successful inferencing</li>
+      <li>Trigger on board LED for demonstration purposes</li>
+    </ul>
+  </li>
+  <li>Arpit: Machine Learning Framework and TinyML Setup for setup
+    <ul>
+      <li>Dive Deep into Tiny Machine Learning</li>
+      <li>Integrate Arduino Nano BLE and OV7675 Camera to detect Person in frame</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="schedule-page">Schedule Page</h2>
+
+<ul>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page">Project Schedule</a></li>
+</ul>
+
 
       </div>
     </div>

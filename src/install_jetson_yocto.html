@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jetson Image</title>
+  <meta name="description" content="Course Project for UCB's ECEN 5713 Spring `21">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="https://AESD-Course-Project.github.io/src/install_jetson_yocto.html">
+  <link rel="alternate" type="application/rss+xml" title="AESD Course Project" href="https://AESD-Course-Project.github.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">AESD Course Project</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+        
+          
+          <a class="page-link" href="/src/Project-Overview.html">AESD Course Project</a>
+          
+        
+          
+          <a class="page-link" href="/README.html">AESD Course Project</a>
+          
+        
+          
+          <a class="page-link" href="/src/Schedule.html">Schedule</a>
+          
+        
+          
+          <a class="page-link" href="/src/TinyML.html">TinyML</a>
+          
+        
+          
+          <a class="page-link" href="/src/WikiHome.html">WikiHome</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/src/arduino_setup.html">Arduino Setup</a>
+          
+        
+          
+          <a class="page-link" href="/src/diagrams.html">Diagram Examples</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/src/install_jetson_yocto.html">Jetson Image</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <h1 id="build-jetson-image">Build Jetson Image</h1>
+
+<h2 id="install-jetson-binaries">Install Jetson Binaries</h2>
+<ul>
+  <li>Install SDK Manager
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://developer.nvidia.com/nvsdk-manager $HOME/Downloads
+</code></pre></div>    </div>
+  </li>
+  <li>Setup the Development Environment
+    <ul>
+      <li>Create an account and log into the SDK Manager</li>
+      <li>From the Product Category panel, select Jetson.</li>
+      <li>From the Hardware Configuration panel, select the host machine and target hardware.</li>
+      <li><img src="img/jetson_1.png" alt="Step 1" /></li>
+      <li>Select Target operating system as “Linux JetPack 4.5.1”</li>
+      <li>Select Target hardware as Jetson Nano 2GB developer kit version / Jetson Nano kit version.</li>
+      <li>Click Continue to proceed to the next step.</li>
+    </ul>
+  </li>
+  <li>Step 2: Review Components and Accept Licenses
+    <ul>
+      <li>If you want SDK Manager to download all setup files to a location other than the default path, go to the Download &amp; Install Options located at the bottom of the screen, then select the path you wish to use.</li>
+      <li>ONLY DOWNLOAD THE FILES, NO INSTALLATION IS NEEDED</li>
+      <li><img src="img/jetson_2.png" alt="Step 2" /></li>
+      <li>Select Continue to proceed to the next step.</li>
+    </ul>
+  </li>
+  <li>Step 3: Installation
+    <ul>
+      <li>Before the installation begins, SDK Manager prompts you to enter your sudo password. (This should not be needed unless you have selected Install in the previous step).</li>
+      <li><img src="img/jetson_3.png" alt="Step 3" /></li>
+      <li>The display shows the progress of the download and installation of the software.</li>
+      <li>At the top, you can toggle between the Details and Terminal tabs. The Terminal tab shows detailed information about the download and installation, with any errors highlighted.</li>
+      <li>The necessary binaries should now be installed under $HOME/Downloads/nvidia/skdm_downloads</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="install-the-dependencies-for-oe4t-jetson-meta-tegra-and-tegra-demo-distro">Install the dependencies for OE4T Jetson meta-tegra and tegra-demo-distro</h2>
+<ul>
+  <li>Install the necessary dependencies
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm
+sudo apt install -y gcc make build-essential gcc-multilib dkms mesa-utils
+sudo apt install -y gcc-8 
+sudo apt install -y g++-8 -y
+sudo apt-get install -y libnvidia-container1
+sudo apt-get install -y libnvidia-container-tools
+sudo apt install -y build-essential cmake git python3-colcon-common-extensions python3-pip python-rosdep python3-vcstool wget
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io 
+sudo apt install -y --no-install-recommends libasio-dev libtinyxml2-dev
+sudo apt-get install -y libcppunit-dev
+sudo apt-get install -y python3-babeltrace
+sudo apt-get install -y python3-pygraphviz
+sudo apt-get install -y clang-format
+sudo apt-get install -y python3-mock
+sudo apt-get install -y libzstd-dev
+sudo apt-get install -y libbenchmark-dev
+sudo apt-get install -y python3-nose
+sudo apt-get install -y libspdlog-dev
+sudo apt-get install -y clang-tidy
+sudo apt-get install -y liblog4cxx-dev
+sudo apt-get install -y libcunit1-dev
+sudo apt-get install -y python3-mypy
+sudo apt-get install -y python3-pytest-mock
+sudo apt-get install -y python3-lttng
+</code></pre></div>    </div>
+  </li>
+  <li>Yocto build can have very specific dependencies follow https://github.com/OE4T/meta-tegra for details.</li>
+</ul>
+
+<h2 id="install-yocto-reposities-and-dependencies-for-jetson-nano-only-scroll-below-for-jetson-nano-2gb">Install Yocto reposities and dependencies for Jetson NANO only (Scroll below for Jetson-Nano 2GB)</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>###############################################
+## IMPORTANT STEP 
+# Nvidia sets up major components as binaries 
+##
+###############################################
+</code></pre></div></div>
+
+<ul>
+  <li>Download the meta-tegra layer
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:OE4T/meta-tegra.git
+</code></pre></div>    </div>
+  </li>
+  <li>Download the tegra-demo-distro
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:OE4T/tegra-demo-distro.git
+</code></pre></div>    </div>
+  </li>
+  <li>Get into the directory
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd tegra-demo-distro/
+</code></pre></div>    </div>
+  </li>
+  <li>Select the necessary directory
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Branches Currently available under git clone git@github.com:OE4T/tegra-demo-distro.git
+# master - never stable. You probably don't want to use this one unless you know you want to work on the bleeding edge.
+# gatesgarth - tegrademo-mender support is not yet complete or fully tested on this branch. Use this branch for experimental Nano-2GB support.
+# dunfell-l4t-r32.4.3 - Current stable branch with support for all platforms with the exception of Nano-2GB.
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout dunfell-l4t-r32.4.3
+</code></pre></div></div>
+
+<ul>
+  <li>Submodules pulls yocto dependencies
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git submodule update --init
+</code></pre></div>    </div>
+  </li>
+  <li>Use . ./setup-env –help to setup the necessary distro and select the machine intended to be built for
+    <ul>
+      <li>. ./setup-env –machine jetson-nano-qspi-sd</li>
+    </ul>
+  </li>
+  <li>Begin bitbake
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># -----------------| -----------------------
+# Image list 
+# demo-image-base 	    Basic image with no graphics
+# demo-image-egl 	    Base with DRM/EGL graphics, no window manager
+# demo-image-sato 	    X11 image with Sato UI
+# demo-image-weston 	Wayland with Weston compositor
+# demo-image-full 	    Sato image plus nvidia-docker, openCV, multimedia API samples
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitbake demo-image-full
+</code></pre></div></div>
+<ul>
+  <li>This step would take around 2-3 hours of build time depending on internet speed.</li>
+</ul>
+
+<h2 id="install-yocto-reposities-and-dependencies-for-jetson-nano-2gb">Install Yocto reposities and dependencies for Jetson-Nano 2GB</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>###############################################
+## IMPORTANT STEP 
+# Nvidia sets up major components as binaries 
+##
+###############################################
+</code></pre></div></div>
+
+<ul>
+  <li>Download the meta-tegra layer
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:OE4T/meta-tegra.git
+</code></pre></div>    </div>
+  </li>
+  <li>Download the tegra-demo-distro
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:OE4T/tegra-demo-distro.git
+</code></pre></div>    </div>
+  </li>
+  <li>Get into the directory
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd tegra-demo-distro/
+</code></pre></div>    </div>
+  </li>
+  <li>Select the necessary directory
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Branches Currently available under git clone git@github.com:OE4T/tegra-demo-distro.git
+# master - never stable. You probably don't want to use this one unless you know you want to work on the bleeding edge.
+# gatesgarth - tegrademo-mender support is not yet complete or fully tested on this branch. Use this branch for experimental Nano-2GB support.
+# dunfell-l4t-r32.4.3 - Current stable branch with support for all platforms with the exception of Nano-2GB.
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout gatesgarth
+</code></pre></div></div>
+
+<ul>
+  <li>Submodules pulls yocto dependencies
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git submodule update --init
+</code></pre></div>    </div>
+  </li>
+  <li>Use . ./setup-env –help to setup the necessary distro and select the machine intended to be built for
+    <ul>
+      <li>. ./setup-env –machine jetson-nano-2gb-devkit</li>
+    </ul>
+  </li>
+  <li>Begin bitbake
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># -----------------| -----------------------
+# Image list 
+# demo-image-base 	    Basic image with no graphics
+# demo-image-egl 	    Base with DRM/EGL graphics, no window manager
+# demo-image-sato 	    X11 image with Sato UI
+# demo-image-weston 	Wayland with Weston compositor
+# demo-image-full 	    Sato image plus nvidia-docker, openCV, multimedia API samples
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitbake demo-image-full
+</code></pre></div></div>
+
+<ul>
+  <li>This step would take around 2-3 hours of build time depending on internet speed.</li>
+</ul>
+
+<h2 id="image-location">Image Location</h2>
+<ul>
+  <li>Image should be located at <code class="language-plaintext highlighter-rouge">tegra-demo-distro/build/tmp/deploy/images</code></li>
+  <li>Follow https://github.com/OE4T/meta-tegra/wiki/Flashing-the-Jetson-Dev-Kit for more details.</li>
+</ul>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">AESD Course Project</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>AESD Course Project</li>
+          <li><a href="mailto:Caleb.Provost@Protonmail.edu">Caleb.Provost@Protonmail.edu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/AESD-Course-Project"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">AESD-Course-Project</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Course Project for UCB's ECEN 5713 Spring `21</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
