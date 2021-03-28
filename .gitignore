@@ -1,3 +1,4 @@
+# Should not have shown on gh-pages branch
 .editorconfig
 Gemfile
 Gemfile.lock
@@ -12,3 +13,4 @@ _layouts/
 _sass/
 _site/
 .vscode/
+src/
