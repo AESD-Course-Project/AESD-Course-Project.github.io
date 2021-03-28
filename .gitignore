@@ -1,0 +1,14 @@
+.editorconfig
+Gemfile
+Gemfile.lock
+.gitignore
+_posts/
+.rubocop.yml
+_config.yml
+.github/
+_includes/
+.jekyll-cache/
+_layouts/
+_sass/
+_site/
+.vscode/

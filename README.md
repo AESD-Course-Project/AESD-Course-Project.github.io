@@ -1,7 +1,6 @@
 ---
 layout: default
 title: AESD Course Project
-permalink: ./
 ---
 
 # AESD 5713 Final Course Project

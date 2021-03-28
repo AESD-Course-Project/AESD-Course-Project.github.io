@@ -7,45 +7,50 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
-title: AESD-Course-Project
-email: your-email@example.com
-description: Course Project Documentation Page for UCB's AESD Sp `21
+title: AESD Course Project
+description: Course Project for UCB's ECEN 5713 Spring `21
 baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /docs/:title:output_ext
+url: "https://AESD-Course-Project.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: AESD-Course-Project
+date_format: "%b %-d, %Y"
+email: "Caleb.Provost@Protonmail.edu"
+
+show_excerpts: true
 
 # Build settings
-# theme: jekyll-theme-midnight
-# theme: jekyll-theme-minimal
-theme: jekyll-theme-dinky
+markdown: kramdown
+theme: site-theme
 
 plugins:
-  - jekyll-feed
+  - bourbon
+  - jekyll-include_sass
+  - jekyll-autoprefixer
+  - jekyll-picture-tag
+  - jekyll-favicon
+  - jekyll-redirect-from
+  - jekyll-seo-tag
   - jekyll-diagrams
   - jekyll-mermaid
 
-github: [metadata]
+mermaid:
+  src: '../assets/js/mermaid.min.js'
+
+# Resolves error: "GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data."
+# github: [metadata]
 
 defaults:
   -
     scope:
-      path: "docs"
+      path: "src"
     values:
       layout: "default"
       category: "wiki"
-
-gems:
-  - jekyll-diagrams
 
 diagrams:
   graphviz:
@@ -54,8 +59,26 @@ diagrams:
   diag:
     options: '-Tsvg --nodoctype'
 
-mermaid:
-  src: '../assets/js/mermaid.min.js'
+sass:
+  sass_dir: _sass
+  style: compressed
+
+picture:
+  source: "assets/images/_fullsize"
+  output: "assets/images/generated"
+  nomarkdown: false
+
+assets:
+  autoprefixer:
+    browsers:
+    - "last 2 versions"
+    - "IE > 9"
+  plugins:
+    css: { autoprefixer: {}}
+    img: { optim: {}}
+
+disqus:
+  shortname: AESD-Course-Project
 
 # Exclude from processing.
 # The following items will not be processed, by default.
