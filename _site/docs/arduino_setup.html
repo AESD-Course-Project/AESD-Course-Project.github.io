@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Arduino Setup | AESD-Course-Project</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Arduino Setup" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Course Project Documentation Page for UCB’s AESD Sp `21" />
+<meta property="og:description" content="Course Project Documentation Page for UCB’s AESD Sp `21" />
+<meta property="og:site_name" content="AESD-Course-Project" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Arduino Setup" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Arduino Setup","url":"/docs/arduino_setup.html","description":"Course Project Documentation Page for UCB’s AESD Sp `21","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="/">AESD-Course-Project</a></h1>
+        
+        
+
+        <p>Course Project Documentation Page for UCB's AESD Sp `21</p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="setup-arduino-cli-and-arduino-ide-with-libraries">Setup Arduino CLI and Arduino IDE with Libraries</h1>
+
+<ul>
+  <li>HARDWARE REQUIRED
+    <ul>
+      <li>Arduino Nano 33 BLE Sense board</li>
+      <li>OV7675 Camera</li>
+      <li>Arduino Tiny Machine Learning Shield</li>
+      <li>USB A to Micro USB Cable</li>
+    </ul>
+  </li>
+  <li>HARDWARE Setup Instructions
+    <ul>
+      <li>If you are using the TinyML Shield
+        <ul>
+          <li>Slot the Nano 33 BLE Sense board into the Tiny Machine Learning Shield.
+            <ul>
+              <li><img src="/docs/images/TinyML_1.png" alt="Step 1" /></li>
+              <li><img src="/docs/images/TinyML_2.png" alt="Step 2" /></li>
+            </ul>
+          </li>
+          <li>Slot the OV7675 camera module into the shield using the same technique.
+            <ul>
+              <li><img src="/docs/images/TinyML_3.png" alt="Step 3" /></li>
+              <li><img src="/docs/images/TinyML_4.png" alt="Step 4" /></li>
+            </ul>
+          </li>
+          <li>Finally, use the provided USB cable (type-A to microB) to connect the Nano 33 BLE Sense development board to your machine.
+            <ul>
+              <li><img src="/docs/images/TinyML_5.png" alt="Step 5" /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Wiring Up Individual Parts
+        <ul>
+          <li>Slot the Nano 33 BLE Sense board into a solderless breadboard.
+            <ul>
+              <li><img src="/docs/images/TinyML_6.png" alt="Step 6" /></li>
+            </ul>
+          </li>
+          <li>Attach a few headers to OV7675 camera.
+            <ul>
+              <li><img src="/docs/images/TinyML_7.png" alt="Step 7" /></li>
+            </ul>
+          </li>
+          <li>Below we’ve mapped these OV7675 module pin numbers onto a fritzing (wiring) diagram for the Arduino Nano 33 BLE sense (assuming it is placed into a breadboard):
+            <ul>
+              <li><img src="/docs/images/TinyML_8.png" alt="Step 8" /></li>
+            </ul>
+          </li>
+          <li>Below is the general pinout for Arduino IDE
+            <ul>
+              <li><img src="/docs/images/TinyML_9.png" alt="Step 9" /></li>
+            </ul>
+          </li>
+          <li>
+            <p>Pins should be connected as follows</p>
+          </li>
+          <li>Table of Pins Connections</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Camera Module Pin</th>
+      <th>Microcontroller Board Pin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VCC / 3.3V</td>
+      <td>1</td>
+      <td>3.3V</td>
+    </tr>
+    <tr>
+      <td>GND</td>
+      <td>2</td>
+      <td>GND</td>
+    </tr>
+    <tr>
+      <td>SIOC / SCL</td>
+      <td>3</td>
+      <td>SCL / A5</td>
+    </tr>
+    <tr>
+      <td>SIOD / SDA</td>
+      <td>4</td>
+      <td>SDA / A4</td>
+    </tr>
+    <tr>
+      <td>VSYNC / VS</td>
+      <td>5</td>
+      <td>D8</td>
+    </tr>
+    <tr>
+      <td>HREF / HS</td>
+      <td>6</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <td>PCLK / 3.3V</td>
+      <td>7</td>
+      <td>A0</td>
+    </tr>
+    <tr>
+      <td>XCLK</td>
+      <td>8</td>
+      <td>D9</td>
+    </tr>
+    <tr>
+      <td>D7</td>
+      <td>9</td>
+      <td>D4</td>
+    </tr>
+    <tr>
+      <td>D6</td>
+      <td>10</td>
+      <td>D6</td>
+    </tr>
+    <tr>
+      <td>D5</td>
+      <td>11</td>
+      <td>D5</td>
+    </tr>
+    <tr>
+      <td>D4</td>
+      <td>12</td>
+      <td>D3</td>
+    </tr>
+    <tr>
+      <td>D3</td>
+      <td>13</td>
+      <td>D2</td>
+    </tr>
+    <tr>
+      <td>D2  / 3.3V</td>
+      <td>14</td>
+      <td>D0/RX</td>
+    </tr>
+    <tr>
+      <td>D1 (may be labeled D0)</td>
+      <td>15</td>
+      <td>D1/TX</td>
+    </tr>
+    <tr>
+      <td>D0 (may be labeled D1)¹</td>
+      <td>16</td>
+      <td>D10</td>
+    </tr>
+    <tr>
+      <td>NC</td>
+      <td>17</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>NC</td>
+      <td>18</td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td>PEN / RST</td>
+      <td>19</td>
+      <td>A2</td>
+    </tr>
+    <tr>
+      <td>PWDN / PDN</td>
+      <td>20</td>
+      <td>A3</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Final Layout
+    <ul>
+      <li><img src="/docs/images/TinyML_10.png" alt="Step 10" /></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="driver-and-libraries-installation-for-arduino-setup">Driver and Libraries Installation for Arduino Setup</h2>
+
+<ul>
+  <li>Install Dependencies
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update -y 
+sudo apt-get upgrade -y 
+sudo apt-get install -y wget
+sudo apt-get install -y tar
+sudo apt-get install -y curl
+</code></pre></div>    </div>
+  </li>
+  <li>Download IDE and setup environemnt variables
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CURR_DIR=$(pwd)
+INSTALL_DIR=${HOME}
+ARDUINO_VERSION=1.8.10
+wget -N https://downloads.arduino.cc/arduino-$ARDUINO_VERSION-linuxaarch64.tar.xz --no-check-certificate
+tar -C $INSTALL_DIR/ -xvf arduino-${ARDUINO_VERSION}-linuxaarch64.tar.xz
+cd $INSTALL_DIR/arduino-${ARDUINO_VERSION}
+sudo ./install.sh
+./arduino-linux-setup.sh "$USER"
+echo "You can delete the tar file if desired: arduino-"${ARDUINO_VERSION}"-linuxaarch64.tar.xz"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>A REBOOT WOULD BE NEEDED AFTER THIS STEP</p>
+  </li>
+  <li>Download Arduino CLI
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CURR_DIR=$(pwd)
+INSTALL_DIR=${HOME}
+ARDUINO_VERSION=1.8.10
+cd $INSTALL_DIR
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=. sh
+sudo chmod +x arduino-cli
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Attach Camera, Shield to Arduino IDE</p>
+  </li>
+  <li>Setup Camera to talk to Arduino and attach the TinyML Shield to Jetson Nano
+```
+CURR_DIR=$(pwd)
+INSTALL_DIR=${HOME}
+ARDUINO_VERSION=1.8.10
+cd $INSTALL_DIR
+PORT=”/dev/ttyACM0”
+BOARD_NAME=”Arduino Nano 33 BLE”
+FQBN=”arduino:mbed:nano33ble”
+ARDUINO_CORE=”arduino:mbed”</li>
+</ul>
+
+<p>./arduino-cli core install ${ARDUINO_CORE}</p>
+
+<p>./arduino-cli config init</p>
+
+<p>./arduino-cli config set library.enable_unsafe_install true</p>
+
+<p>./arduino-cli lib install “Arduino_TensorFlowLite@2.4.0-ALPHA”</p>
+
+<p>./arduino-cli lib install –git-url “https://github.com/tinyMLx/arduino-library.git”</p>
+
+<p>./arduino-cli lib install “Arduino_LSM9DS1@1.1.0”</p>
+
+<p>./arduino-cli lib install “ArduinoBLE@1.1.3”</p>
+
+<p>TEST_CAMERA_DIR=”${INSTALL_DIR}/Arduino/libraries/arduino-library/examples/test_camera”</p>
+
+<p>./arduino-cli compile -b ${FQBN} ${TEST_CAMERA_DIR} -v</p>
+
+<p>sudo ./arduino-cli upload -b ${FQBN} -p ${PORT} ${TEST_CAMERA_DIR} -v</p>
+
+<p>sudo ./arduino-cli board attach serial:///dev/ttyACM0 ${TEST_CAMERA_DIR}</p>
+
+<p>TEST_CAMERA_DIR=”${INSTALL_DIR}/Arduino/libraries/arduino-library/examples/test_camera”</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- Check to see if the Camera is working by testing output over ```/dev/ttyACM0```
+</code></pre></div></div>
+<p>sudo stty -F /dev/ttyACM0 raw 115200
+cat /dev/ttyACM0 &gt; raw_points.txt
+```</p>
+
+
+      </section>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

@@ -12,13 +12,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Course Project Documentation Page for UCB’s AESD Sp `21" />
 <meta property="og:description" content="Course Project Documentation Page for UCB’s AESD Sp `21" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="AESD-Course-Project" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AESD Course Project" />
 <script type="application/ld+json">
-{"headline":"AESD Course Project","@type":"WebSite","url":"http://localhost:4000/","name":"AESD-Course-Project","description":"Course Project Documentation Page for UCB’s AESD Sp `21","@context":"https://schema.org"}</script>
+{"@type":"WebSite","headline":"AESD Course Project","url":"/","name":"AESD-Course-Project","description":"Course Project Documentation Page for UCB’s AESD Sp `21","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
@@ -29,7 +27,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="http://localhost:4000/">AESD-Course-Project</a></h1>
+        <h1><a href="/">AESD-Course-Project</a></h1>
         
         
 
@@ -43,50 +41,112 @@
       </header>
       <section>
 
-      <h1 id="quick-overview-below-see-our-project-wiki-for-more">Quick Overview Below. See our <a href="/docs/WikiHome.html">Project Wiki</a> for more!</h1>
+      <h1 id="aesd-5713-final-course-project">AESD 5713 Final Course Project</h1>
 
-<h2 id="hardware-architecture">Hardware Architecture</h2>
+<h2 id="block-diagrams">Block Diagrams</h2>
 
-<h3 id="main-hub---nvidia-jetson-nano-2gb-developers-kit">Main Hub - Nvidia Jetson Nano 2GB Developer’s Kit</h3>
+<h3 id="hardware-block-diagrams">Hardware Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h3 id="software-block-diagrams">Software Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h3 id="functional-block-diagrams">Functional Block Diagrams</h3>
+<blockquote>
+  <p><strong><em>NOTE:</em></strong>  TODO</p>
+</blockquote>
+
+<h2 id="target-build-system">Target Build System</h2>
+<p>We intend to use Yocto as the bring up tool to generate Linux image on NVIDIA Jetson Nano.</p>
+
+<h2 id="hardware-platform">Hardware Platform</h2>
+<p>Intended hardware platforms for this project:</p>
+
 <ul>
-  <li>https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit</li>
-  <li>Jetson will run a yocto-built Tegra distribution</li>
+  <li><a href="https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit">Jetson Nano</a></li>
+  <li><a href="https://store.arduino.cc/usa/tiny-machine-learning-kit">Arduino Nano 33 BLE</a></li>
+  <li><a href="https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/">OV7675 Camera</a></li>
 </ul>
 
-<h3 id="external-camera-hub---arduino-nano-33-ble-sense-with-tiny-machine-learning-shield">External Camera Hub - Arduino Nano 33 BLE Sense with Tiny Machine Learning Shield</h3>
+<h2 id="open-source-projects">Open Source Projects</h2>
 <ul>
-  <li>https://store.arduino.cc/usa/tiny-machine-learning-kit</li>
-  <li>Linked kit contains the Arduino Nano 33 BLE Sense with a shield for the OV7675 Camera</li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md">Open Soruce Projects</a></li>
 </ul>
 
-<h3 id="block-diagram---todo">Block Diagram - TODO</h3>
-
-<h3 id="communication-between-subsystems">Communication Between Subsystems</h3>
-<p>Couple of options:</p>
-
+<h2 id="previously-used-content">Previously Used Content</h2>
 <ul>
-  <li>Serial communication between Jetson and Arduino
-    <ul>
-      <li>Simplist electrical connection, connect USBA on Jetson to MicroUSB on Arduino</li>
-      <li>Use TTY device on Jetson to communicate serially with Arduino</li>
-      <li>Could create our own daemon to interact with the TTY device</li>
-    </ul>
-  </li>
-  <li>I2C between Jetson and Arduino
-    <ul>
-      <li>Lower level protocol, but still supported by both ends</li>
-      <li>Would need to research how to interact with I2C communication from linux on Jetson</li>
-    </ul>
-  </li>
-  <li>Potential Stretch (and a big stretch at that)
-    <ul>
-      <li>Install WiFi/Bluettoth network card onto Jetson board</li>
-      <li>Communicate with Arduino over Bluetooth</li>
-      <li>https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/</li>
-    </ul>
-  </li>
+  <li>Yocto</li>
+  <li>Signal handlers</li>
+  <li>Clocks</li>
+  <li>Init Scripts and Rootfs Overlays</li>
 </ul>
 
+<h2 id="new-content">New Content</h2>
+<ul>
+  <li>Yocto Image for Jetson Nano</li>
+  <li>Creating Modules for Arduino BLE 33</li>
+  <li>USB Interface for Jetson and Arduino</li>
+  <li>Deplying Tiny Machine Learning (TinyML)</li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/docs/TinyML.md">Case study for TinyML</a></li>
+</ul>
+
+<h2 id="shared-material">Shared Material</h2>
+<ul>
+  <li><a href="https://github.com/cu-ecen-5013/buildroot-assignments-base/wiki/Flashing-Images-to-SDCard">Flashing Image to SD Card</a></li>
+</ul>
+
+<h2 id="source-code-organization">Source Code Organization</h2>
+<ul>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/gh-pages/README.md">Project Overview</a></li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page">Project Schedule</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-CalebProvost">Caleb’s Repository</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232">Arpit’s Repository</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-ZachTurner07">Zach’s Repository</a></li>
+</ul>
+
+<h2 id="groups-overview">Group’s Overview</h2>
+<h3 id="team-project-members">Team Project Members</h3>
+<ul>
+  <li>Caleb: Yocto Image Setup and build for Jetson Tegra</li>
+  <li>Zach: Communication Between Subsystems (Serial/I2C/USB/Bluetooth)
+    <ul>
+      <li>serial communication between subsystems</li>
+      <li>GPIO communication to show successful inferencing… how it interfaces to BSP</li>
+      <li>Trigger on board LED for demonstration purposes</li>
+    </ul>
+  </li>
+  <li>
+    <p>Arpit: Machine Learning Framework and TinyML Setup for setup</p>
+  </li>
+  <li>Things left -&gt; Alarm driver, alarm hardware, Kernel Modules devel …</li>
+</ul>
+
+<h2 id="schedule-page">Schedule Page</h2>
+
+<ul>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/wiki/Final-Project-Assignment-Schedule-Page">Project Schedule</a></li>
+</ul>
+
+<!-- ### Communication Between Subsystems
+Couple of options:
+
+* Serial communication between Jetson and Arduino
+  * Simplist electrical connection, connect USBA on Jetson to MicroUSB on Arduino
+  * Use TTY device on Jetson to communicate serially with Arduino
+  * Could create our own daemon to interact with the TTY device
+
+* I2C between Jetson and Arduino
+  * Lower level protocol, but still supported by both ends
+  * Would need to research how to interact with I2C communication from linux on Jetson
+
+* Potential Stretch (and a big stretch at that)
+  * Install WiFi/Bluettoth network card onto Jetson board
+  * Communicate with Arduino over Bluetooth 
+  * https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/ -->
 
 
       </section>

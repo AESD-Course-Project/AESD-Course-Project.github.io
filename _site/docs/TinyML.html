@@ -12,13 +12,11 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Course Project Documentation Page for UCB’s AESD Sp `21" />
 <meta property="og:description" content="Course Project Documentation Page for UCB’s AESD Sp `21" />
-<link rel="canonical" href="http://localhost:4000/docs/TinyML.html" />
-<meta property="og:url" content="http://localhost:4000/docs/TinyML.html" />
 <meta property="og:site_name" content="AESD-Course-Project" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="TinyML" />
 <script type="application/ld+json">
-{"headline":"TinyML","@type":"WebPage","url":"http://localhost:4000/docs/TinyML.html","description":"Course Project Documentation Page for UCB’s AESD Sp `21","@context":"https://schema.org"}</script>
+{"@type":"WebPage","headline":"TinyML","url":"/docs/TinyML.html","description":"Course Project Documentation Page for UCB’s AESD Sp `21","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
@@ -29,7 +27,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="http://localhost:4000/">AESD-Course-Project</a></h1>
+        <h1><a href="/">AESD-Course-Project</a></h1>
         
         
 
@@ -52,12 +50,12 @@
 <h2 id="tiny-machine-learning-with-tensorflow">Tiny Machine Learning with Tensorflow</h2>
 
 <!-- Insert TinyML.png Image here  -->
-<p><img src="images/TinyML.png" alt="Tiny Machine Learning" /></p>
+<p><img src="/docs/images/TinyML.png" alt="Tiny Machine Learning" /></p>
 
 <p>While  <a href="https://www.tensorflow.org/">TensorFlow</a> is written with fast custom C++ code under the hood, it has a high level Python API. A custom neural network using Tensorflow, <a href="https://www.tensorflow.org/">TensorFlow Lite</a> and <a href="https://www.tensorflow.org/lite/microcontrollers">TensorFlow Micro</a></p>
 
 <!-- Insert Integration TinyML image here  -->
-<p><img src="images/TinyML_integration.png = 100x100" alt="Integration" /></p>
+<!-- ![Integration](images/TinyML_integration.png=100x100) -->
 
 <p>TinyML helps to provide a unique solution by summarizing and analyzing data at the edge on low power embedded devices, TinyML can provide smart summary statistics that take these previously lost patterns, anomalies, and advanced analytics into account.</p>
 
@@ -66,7 +64,7 @@
 <p><a href="https://support.google.com/websearch/answer/2940021?co=GENIE.Platform%3DAndroid&amp;hl=en">Okay Google</a>, <a href="https://machinelearning.apple.com/research/hey-siri">Hey Siri</a>, <a href="https://developer.amazon.com/en-US/alexa">Alexa</a> are all successful applications of TinyML, where the devices are used as Inference engine, designed to react to perform an action for a specific set of intructions to showcase output, or act as inference engine.</p>
 
 <!-- Insert EnableTinyML.png image here  -->
-<p><img src="images/EnableTinyML.png" alt="Integration" /></p>
+<p><img src="/docs/images/EnableTinyML.png" alt="Integration" /></p>
 
 <h3 id="input-to-the-embedded-systems-enabled-ml">Input to the Embedded Systems enabled ML</h3>
 <p>Usually the input to the above mechanism are sensors, these can be Motion Sensors, Acoustic Sensors, Temperature, Humidity, environment sensorss, touchscreen input, Cameras, Biometric sensors and force or rotation sensors.</p>
@@ -113,12 +111,12 @@ and extrapolation some kind of interesting data. And you send that digital signa
 <h2 id="machine-learning-algorithm-challenges-embedded-perspective">Machine Learning Algorithm Challenges (Embedded Perspective)</h2>
 
 <!-- Insert Parameter_Traning.png Image here -->
-<p><img src="images/Parameter_Traning.png" alt="Parameter Traning" /></p>
+<p><img src="/docs/images/Parameter_Traning.png" alt="Parameter Traning" /></p>
 
 <p>In order to get to obtain good accuracy and deisgn analysis, modern nueral network frameworks are growing in complexity from deeper neural networks to higher precision floating point arithmetic which requires astounding amount of compute power with GPU’s, TPU’s  and smart FPU’s. These capabilities are not almost not present in ubiquitous embedded systems.</p>
 
 <!-- Insert GFLOPS_VS_MODELs_Param.png -->
-<p><img src="images/GFLOPS_VS_MODELs_Param.png" alt="GFLOPS Vs Models" />
+<p><img src="/docs/images/GFLOPS_VS_MODELs_Param.png" alt="GFLOPS Vs Models" />
 <!-- Source: S. Bianco, R. Cadene, L. Celona and P. Napoletano, "Benchmark Analysis of Representative Deep Neural Network Architectures," in IEEE Access, vol. 6, pp. 64270-64277, 2018, doi: 10.1109/ACCESS.2018.2877890. --></p>
 
 <p>From the above figure lets focus onto <a href="https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf">AlexNet</a>, which happened in 2012 which was used to predict a thousand classes from <a href="http://www.image-net.org/">ImageNet</a> data set. It had an  accuracy of 57.1%. And its model size was 61 megabytes in size. To obtain better accuracy  <a href="https://arxiv.org/abs/1409.1556">VGGNet</a> came along in 2014 which boosted the accuracy to 71.5%. But with that came a boost from 60 megabytes model size to 528 megabytes.Additionally in 2015, Microsoft released <a href="https://arxiv.org/abs/1512.03385">ResNet</a>, residual nets with accuracy of 75.8%
@@ -127,7 +125,7 @@ while shrinking the model size as it was getting better. In order to make them b
 <p><a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">MobileNet</a> for example is used in smartphones due to its optimization for memeory at the capacity of smaller disk usage which is hardly 17 megabytes, with 75% accuracy. The key nugget is that our little embedded microcontrollers onlyhave a few kilobytes of memory. With a few kilobytes of memory, it’s an order of magnitude difference between where usually state of the art sits and how we need to cram things in.</p>
 
 <!-- Insert Transform.png -->
-<p><img src="images/Transform.png" alt="GFLOPS Vs Models" /></p>
+<p><img src="/docs/images/Transform.png" alt="GFLOPS Vs Models" /></p>
 
 <h2 id="machine-learning-lifecycle">Machine Learning Lifecycle</h2>
 <p>A classic Machine learning course is about Statistics and algorithm development for analysis and design of Neural networks and performing tools developement to optimzie sections of the neural network but this only form the ML code box. To deploy machine learning in production environemnt has multiple inputs which can lead to multiple outputs.</p>
@@ -157,7 +155,7 @@ while shrinking the model size as it was getting better. In order to make them b
 <ul>
   <li>Model Conversion: Conversion of the models can be undetaken both from model design and memory mapping.
     <ul>
-      <li><a href="https://towardsdatascience.com pruning-deep-neural-network-56cae1ec5505">Neural Network Pruning</a></li>
+      <li><a href="https://towardsdatascience.com pruning-deep-neural-network-56cae1ec5505">Neural_Network_Pruning</a></li>
       <li><a href="https://www.tensorflow.org/lite/performance/post_training_quantization">Precision Quantization</a></li>
       <li><a href="https://keras.io/examples/vision/knowledge_distillation/">Knowledge Distillation</a></li>
     </ul>
@@ -170,12 +168,12 @@ while shrinking the model size as it was getting better. In order to make them b
 <p>This section of ML Architecture ususally consists of creating dashboards (<a href="https://www.tensorflow.org/tensorboard">Tensorboard</a>), on-field evaluations and inference and optimazations.</p>
 
 <!-- Insert MLPipeline.png -->
-<p><img src="images/MLPipeline.png" alt="Machine Learning Pipeline" /></p>
+<p><img src="/docs/images/MLPipeline.png" alt="Machine Learning Pipeline" /></p>
 
 <h2 id="usecase-of-tensorflow">Usecase of Tensorflow</h2>
 
 <!-- Inensorflow_pipeline.png -->
-<p><img src="images/Tensorflow_pipeline.png" alt="Tesnorflow Pipeline in use for this Project" />
+<p><img src="/docs/images/Tensorflow_pipeline.png" alt="Tesnorflow Pipeline in use for this Project" />
 The figure above shows the workflow methodology we will be following for building the tinyML applications in this course. These are broken down into three main stages:</p>
 
 <ul>
