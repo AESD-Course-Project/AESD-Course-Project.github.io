@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -e
+
+# Install site dependencies
+python3 -m pip --no-cache install blockdiag seqdiag actdiag nwdiag graphviz
+if [ -f "/etc/alpine-release" ]; then
+    export PATH="$PATH:/home/runner/work/jekyll/jekyll/vendor"
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ jekyll --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ bundler --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ rubocop --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ ffi --platform=ruby --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ kramdown-parser-gfm --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ http_parser.rb --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ jekyll --user-install
+    gem install -n /home/runner/work/jekyll/jekyll/vendor/ jekyll-diagrams --user-install
+else
+    apt update && apt install python-blockdiag -y
+    gem install bundler
+    gem install rubocop
+    gem install ffi --platform=ruby
+    gem install kramdown-parser-gfm
+    gem install http_parser.rb
+    gem install jekyll
+    gem install jekyll-diagrams
+fi
+
+
+# Remove Gemfile.lock to avoid write permission issues
+rm -f Gemfile.lock
+
+# Execute build process
+bundle install && bundle update
+bundle exec jekyll build
+bundle exec rubocop -D
+bundle exec .github/scripts/validate-html
+gem build site.gemspec

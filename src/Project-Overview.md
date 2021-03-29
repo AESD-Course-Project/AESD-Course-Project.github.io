@@ -1,7 +1,6 @@
 ---
 layout: default
-title: AESD Course Project Overview
-permalink: Overview
+title: AESD Course Project
 ---  
 
 ## Overview 

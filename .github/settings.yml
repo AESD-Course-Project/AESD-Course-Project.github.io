@@ -2,24 +2,37 @@
 
 repository:
   has_issues: true
-  has_wiki: false
-  has_projects: false
+  has_wiki: true
+  has_projects: true
   has_downloads: false
 
 labels:
-  - name: help wanted
-    oldname: help-wanted
-    color: 0e8a16
-  - name: more-information-needed
-    color: d93f0b
   - name: bug
-    color: b60205
-  - name: feature
-    color: 1d76db
+    color: d73a4a
+  - name: documentation
+    color: 0075ca
+  - name: duplicate
+    color: cfd3d7
+  - name: enhancement
+    color: a2eeef
   - name: good first issue
-    color: "5319e7"
+    color: 7057ff
+  - name: help wanted
+    color: 008672
+  - name: idea/discussion
+    color: 87899D
+  - name: invalid
+    color: e4e669
+  - name: question
+    color: d876e3
+  - name: todo
+    color: EBB602
+  - name: WIP
+    color: 61D569
+  - name: wontfix
+    color: ffffff
 
-# Not currently implemented by probot/settings, but manually implemented in script/deploy
+# Not implemented by probot/settings, implemented by .github/scripts/deploy
 branch_protection:
   restrictions: null
   enforce_admins: false

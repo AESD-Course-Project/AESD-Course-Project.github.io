@@ -1,0 +1,30 @@
+# **Project-Schedule**
+Below is a table reflecting the progress of the project's schedule.  
+  
+
+## Schedule:  
+The milestone tasks below are associated with Sprints and associated issues which are labeled for it.  
+The milestone/task/issue being worked on will either have the `WIP` label associated with it, or a pull request created for it.  
+Any pending issues associated to a prior Sprint when that week's Sprint is finished, will have the current state/content of it copied to another issues, referencing the latest Spring, before being closed.   
+
+
+The Course Project's [Projects](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/projects/1) tab will automatically handle the kanban workflow of the project. Below is a synopsis of the scheduling.    
+   
+| Task (milestone linked)  |     Responsibility     |     Target Date     |     Status |     New Expected<br/>Completion Date     |
+|           :---           |         :----:         |        :----:       |    :----:    |                  :----:                  |
+| **SPRINT 1**                                       | **ALL** | **START DATE: Mar 28** | :heavy_plus_sign: | **April 29** |
+| [Yocto on Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/5)                                         | Caleb Provost  | Mar 29th | :heavy_plus_sign: | April 4 |
+| [Define Communication IO](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/7)    | Zach Turner    | Mar 29th | :x: | April 4 |
+| [Get Nano demo running](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/6)                     | Arpit Savarkar | Mar 27th | :heavy_plus_sign: | April 4 |
+| [Arduino Setup Script post build](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/4)    |  | Mar 31 | :x: | N/A |
+| **SPRINT 2**                                       | **ALL** | **START DATE: April 5** | :x: | **April 11** |
+
+
+## Icon Legend
+:x: Not started (Issue should include DoD)
+
+:heavy_check_mark: Complete (Issue should contain detail about implementation, DoD in description should be up to date)
+
+:heavy_plus_sign: In Progress (Issue have up to date DoD, should contain detail about status)
+
+:red_circle: Blocked (Issue should include DoD and contain link to blocker)
