@@ -1,10 +1,10 @@
 ---
 layout: default
-title: AESD Course Project
----  
+title: AESD Course Project Overview
+---
 
 ## Overview 
-This project intends to deal with integrating and building a object detection framework and its dectection based on camera and peripheral micro-controller  (Arduino BLE 33 mBed) connected to a NVIDIA Jetson Nano acting as a hub. For the purpose of demonstration we would be attaching a low power camera attached to the micro-controller to act as an inference engine built over Machine Learning Framework to interact with Jetson Nano and form a feedback loop to alarm a system of detection of person in frame of camera. The aim of this project is to train a machine learning model and deploy over low-power, low-memory micro-controllers and form feedback system of the Embedded Network Hub (Jetson). This would include bringing up completely independent hardware which includes the controlling unit, sensors, and software bring up, which includes Operating systems, communication protocols, coding styles, and languages. This type of implementation reduces and to some extent completely removes the inter-dependency of the hardware setup.
+This project intends to deal with integrating and building a object detection framework and its dectection based on camera and peripheral micro-controller  (Arduino BLE 33 mBed) connected to a NVIDIA Jetson Nano acting as a hub. For the purpose of demonstration we would be attaching a low power camera attached to the micro-controller to act as an inference engine built over Machine Learning Framework to interact with Jetson Nano and form a feedback loop to alarm a system of detection of person in frame of camera. The aim of this project is to train a machine learning model and deploy over low-power, low-memory micro-controllers and form feedback system of the Embedded Network Hub (Jetson). This would include bringing up completely independent hardware which includes the controlling unit, sensors, and software bring up, which includes Operating systems, communication protocols, coding styles, and languages.
 
 Using low-level micro-controllers is cheap and provides more opportunity (future goal) to scale the product under development and testing providing both financial and engineering benefits. 
 
@@ -16,7 +16,7 @@ Major Goals:
 - Running Tegra-demo-distro with Arduino Setup.
 - Setup Camera board and Communication.
 - Build deep-stream or opencv (hardware accelerated) running on Jetson Nano. 
-- Run AI Image recognition project working with on image on Host/Hub (Jetson) and Arduino BLE 33 with Camera. 
+- Run AI Image recognition project working with on image on Host/Hub (Jetson) and/or Arduino BLE 33 with Camera. 
 
 System works as a hard real time system, which captures camera feed at set time interval irrespective of how much time the sensors take to send data over to Nano. The overaching goal of this project would be create a Hub and Client mechanism such that machine learning can be deployed on micro-controllers with and without GPU's. 
 
@@ -42,7 +42,13 @@ Intended hardware platforms for this project:
 - [OV7675 Camera](https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/)
 
 ## Open Source Projects 
-- [Open Soruce Projects](https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md)
+- [Tensorflow](https://github.com/tensorflow/tensorflow)
+- [Tensorflow Lite](https://github.com/tensorflow/tflite-support)
+- [Tensorflow Micro](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro)
+- [Meta Tegra for Yocto](https://github.com/OE4T/meta-tegra)
+- [Arduino CLI](https://github.com/arduino/arduino-cli)
+- [Arduino IDE](https://github.com/arduino/Arduino)
+- [TinyML](https://www.oreilly.com/library/view/tinyml/9781492052036/)
 
 ## Previously Used Content
 - Yocto
@@ -62,8 +68,8 @@ Intended hardware platforms for this project:
 
 ## Source Code Organization 
 - [Project Webpage](https://AESD-Course-Project.github.io): Dynamically Generated Documentation
-- [Project Overview](./): Project Synopsis
-- [Project Schedule](../Project-Schedule)
+- [Project Overview](Project-Overview.md): Project Synopsis
+- [Project Schedule](Project-Schedule.md): Project Schedule
 - [Caleb's Repository](https://github.com/cu-ecen-5013/final-project-CalebProvost): One-click-build script Focused
 - [Arpit's Repository](https://github.com/cu-ecen-5013/final-project-arpit6232): Image Development Focused
 - [Zach's Repository](https://github.com/cu-ecen-5013/final-project-ZachTurner07): Driver & Module Code Focused
@@ -82,7 +88,7 @@ Intended hardware platforms for this project:
 
 
 ## Schedule Page
-- [Project Schedule](../Project-Schedule)  
+- [Project Schedule](Project-Schedule.md): Project Schedule 
 
 
 <!-- ### Communication Between Subsystems
