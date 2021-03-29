@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AESD Course Project Overview
+title: Home
 permalink: /Overview.html
 ---
 
