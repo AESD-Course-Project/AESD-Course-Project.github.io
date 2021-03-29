@@ -41,10 +41,10 @@ Intended hardware platforms for this project:
 
 - [Jetson Nano](https://github.com/OE4T/meta-tegra)
 - [Arduino Nano 33 BLE](https://store.arduino.cc/usa/tiny-machine-learning-kit)
-- [OV7675 Camera](https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/)
+- [OV7675 Camera](https://www.arducam.com/src/camera-breakout-board/0-3mp-ov7675/)
 
 ## Open Source Projects 
-- [Open Soruce Projects](https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/docs/open_source_projects.md)
+- [Open Soruce Projects](https://github.com/cu-ecen-5013/final-project-arpit6232/blob/main/src/open_source_projects.md)
 
 ## Previously Used Content
 - Yocto
@@ -53,11 +53,11 @@ Intended hardware platforms for this project:
 - Init Scripts and Rootfs Overlays
 
 ## New Content 
-- [Yocto Image for Jetson Nano](docs/install_jetson_yocto.md) 
+- [Yocto Image for Jetson Nano](src/install_jetson_yocto.md) 
 - Creating Modules and scripts for Arduino BLE 33 
-- [Interface for Jetson and Arduino](docs/arduino_setup.md)
+- [Interface for Jetson and Arduino](src/arduino_setup.md)
 - Deplying Tiny Machine Learning (TinyML)
-- [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/docs/TinyML.md)
+- [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/TinyML.md)
 
 ## Shared Material 
 - [Flashing Image to SD Card](https://github.com/cu-ecen-5013/buildroot-assignments-base/wiki/Flashing-Images-to-SDCard)
