@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+reltiv_dir="$(dirname "${0}")"
+cd ${reltiv_dir}/../../
+git clone https://github.com/AESD-Course-Project/AESD-Course-Project.github.io.wiki.git public/
+wiki_docs="$(ls public/*.md)"
+
+for md in $wiki_docs; do
+  if [ "$(basename "${md}" .md)" != "Home" ]; then
+    mv "${md}" "src/"
+  fi
+done
+wiki_docs="$(ls src/*.md)"
+for md in $wiki_docs; do
+  title="$(basename "${md}" .md)"
+  sed -i "1s;^;---\nlayout: default\ntitle: ${title}\npermalink: /src/${title}.html\n---\n\n;" "${md}"
+done

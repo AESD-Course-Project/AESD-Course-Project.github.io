@@ -1,3 +1,9 @@
+---
+layout: default
+title: Final-Project-Assignment-Schedule-Page
+permalink: /src/Final-Project-Assignment-Schedule-Page.html
+---
+
 This page is a template for final project related scheduling tasks
 
 ## Project Board

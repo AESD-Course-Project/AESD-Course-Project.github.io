@@ -1,3 +1,9 @@
+---
+layout: default
+title: Zach's-Turner-Final-Project-Video
+permalink: /src/Zach's-Turner-Final-Project-Video.html
+---
+
 # Overview
 
 This page provide's an overview of <studentname's> contribution to the AESD Final Project <Projectname>

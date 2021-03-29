@@ -1,3 +1,9 @@
+---
+layout: default
+title: Caleb-Provost's-Final-Video-Page
+permalink: /src/Caleb-Provost's-Final-Video-Page.html
+---
+
 # Overview
 
 This page provide's an overview of Caleb Provost's contribution to the AESD Final Project <Projectname>

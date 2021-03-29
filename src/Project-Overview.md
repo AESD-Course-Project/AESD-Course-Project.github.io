@@ -1,9 +1,10 @@
 ---
 layout: default
-title: AESD Course Project Overview
+title: Project-Overview
+permalink: /src/Project-Overview.html
 ---
 
-## Overview 
+# Overview 
 This project intends to deal with integrating and building a object detection framework and its dectection based on camera and peripheral micro-controller  (Arduino BLE 33 mBed) connected to a NVIDIA Jetson Nano acting as a hub. For the purpose of demonstration we would be attaching a low power camera attached to the micro-controller to act as an inference engine built over Machine Learning Framework to interact with Jetson Nano and form a feedback loop to alarm a system of detection of person in frame of camera. The aim of this project is to train a machine learning model and deploy over low-power, low-memory micro-controllers and form feedback system of the Embedded Network Hub (Jetson). This would include bringing up completely independent hardware which includes the controlling unit, sensors, and software bring up, which includes Operating systems, communication protocols, coding styles, and languages.
 
 Using low-level micro-controllers is cheap and provides more opportunity (future goal) to scale the product under development and testing providing both financial and engineering benefits. 
@@ -68,8 +69,8 @@ Intended hardware platforms for this project:
 
 ## Source Code Organization 
 - [Project Webpage](https://AESD-Course-Project.github.io): Dynamically Generated Documentation
-- [Project Overview](Project-Overview.md): Project Synopsis
-- [Project Schedule](Project-Schedule.md): Project Schedule
+- [Project Overview](./): Project Synopsis
+- [Project Schedule](Project-Schedule)
 - [Caleb's Repository](https://github.com/cu-ecen-5013/final-project-CalebProvost): One-click-build script Focused
 - [Arpit's Repository](https://github.com/cu-ecen-5013/final-project-arpit6232): Image Development Focused
 - [Zach's Repository](https://github.com/cu-ecen-5013/final-project-ZachTurner07): Driver & Module Code Focused
@@ -88,7 +89,7 @@ Intended hardware platforms for this project:
 
 
 ## Schedule Page
-- [Project Schedule](Project-Schedule.md): Project Schedule 
+- [Project Schedule](Project-Schedule)  
 
 
 <!-- ### Communication Between Subsystems

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Sprint-Overview
+permalink: /src/Sprint-Overview.html
+---
+
 # **Sprint Overview**
 See the project's [Sprints](https://github.com/AESD-Course-Provost/AESD-Course-Project.github.io/milestones) page for progress updates, and the individual milestone for its breakdown.  
 

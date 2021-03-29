@@ -1,3 +1,9 @@
+---
+layout: default
+title: Project-Schedule
+permalink: /src/Project-Schedule.html
+---
+
 # **Project-Schedule**
 Below is a table reflecting the progress of the project's schedule.  
   
