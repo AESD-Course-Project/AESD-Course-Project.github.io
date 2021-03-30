@@ -1,19 +1,76 @@
 #!/bin/bash
-
 set -e
 
+# Environment variables must be set first:
+# export GITHUB_USER=UserName
+# export GITHUB_TOKEN=$SECRET_PAT
+# export GITHUB_REPOSITORY=RepoOwner/RepoName
+
+# Set variables
 reltiv_dir="$(dirname "${0}")"
 cd ${reltiv_dir}/../../
-git clone https://github.com/AESD-Course-Project/AESD-Course-Project.github.io.wiki.git public/
-wiki_docs="$(ls public/*.md)"
+FROM_WIKI="TO_WIKI"
 
-for md in $wiki_docs; do
-  if [ "$(basename "${md}" .md)" != "Home" ]; then
-    mv "${md}" "src/"
-  fi
-done
-wiki_docs="$(ls src/*.md)"
-for md in $wiki_docs; do
-  title="$(basename "${md}" .md)"
-  sed -i "1s;^;---\nlayout: default\ntitle: ${title}\npermalink: /src/${title}.html\n---\n\n;" "${md}"
-done
+# If updating wiki with src docs
+[ $# -gt 0 ] && FROM_WIKI="${1}"
+if [ "${FROM_WIKI}" = "TO_WIKI" ]; then
+  echo "Overwritting Wiki with src/"
+  src_docs="$(ls src/*.md)"
+
+  mkdir -p public/ && rm -rf public/
+  git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git public/
+  cd public/ && git fetch --all && git pull --rebase origin master && cd ../
+
+  for sd in ${src_docs}; do
+    echo "Stripping Headers"
+    [ "$(head -n 1 "${sd}")" = "---" ] && printf "%s\n" "$(tail -n +7 "${sd}")" > "${sd}"
+    echo "copying ${sd} to public/"
+    cp -f "${sd}" "public/"
+  done
+
+  cp -rf src/img/ public/
+
+  push_auth="$(git log -1 --pretty=format:'%an')"
+  auth_email="$(git log -1 --pretty=format:'%ae')"
+  wiki_commit="Auto Update via $(git log -1 --pretty=format:'%h')"
+
+  echo "$PWD" && ls -alh && cd public/
+  git config --local user.name "${push_auth}"
+  git config --local user.email "${auth_email}"
+  echo "$PWD" && ls -alh &&git status
+  touch .blank.md && git add . && git commit -sm "$wiki_commit"
+  rm .blank.md && git add . && git commit -sm "$wiki_commit"
+  git push
+  echo "$PWD" && ls -alh && git status
+  cd ../
+
+  # Clean up
+  rm -rf public/
+
+  exit 0
+
+# If updating gh-pages with wiki edits
+elif [ "${FROM_WIKI}" = "FROM" ]; then
+  echo "Overwriting src/ with Wiki Docs"
+
+  mkdir -p public/ && rm -rf public/
+
+  # Clone Wiki and get files
+  git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git public/
+  wiki_docs="$(ls public/*.md)"
+
+  # Copy any updated files note already in src dir (Not Home.md though) 
+  for md in ${wiki_docs}; do
+    title="$(basename "${md}" .md)"
+    if [ "$(basename "${md}" .md)" != "Home" ]; then
+      echo "copying ${md} to src/"
+      sed -i "1s;^;---\nlayout: default\ntitle: ${title}\npermalink: /src/${title}.html\n---\n\n;" "${md}"
+      cp -f "${md}" "src/"
+    fi
+  done
+
+  # Clean up
+  rm -rf public/
+
+  exit 0
+fi

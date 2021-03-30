@@ -1,99 +1,222 @@
 name: Build & Deploy Website
-
 on:
   push:
     branches: [ master ]
+  # Runs at 600 UTC daily
+  schedule:
+  - cron: "0 6 * * *"
 
 jobs:
-  Build-and-Deloy:
+  AESD-Course-Project-CICD:
     runs-on: ubuntu-18.04
-
+    # env: # $BUNDLE_GEMFILE must be set at the job level, so it is set for all steps
+    #   BUNDLE_GEMFILE: ${{ github.workspace }}/Gemfile.lock
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Dependencies
-      run: |
-        sudo apt-get install -y \
-          gcc make cmake \
-          python3 python3-dev \
-          python3-setuptools python-setuptools \
-          zlib1g zlib1g-dev \
-          ruby ruby-dev ruby-full \
-          fontconfig yarn \
-          graphviz graphviz-dev graphviz-doc \
-          libgdbm-dev libgdbm-compat-dev \
-          fonts-linuxlibertine texlive-lang-french texlive-latex-base texlive-latex-recommended \
-          python-pil-doc python-pil-dbg python-renderpm-dbg python-egenix-mxtexttools \
-          python-reportlab-doc python-setuptools-doc sgml-base-doc debhelper \
-          python-seqdiag python-blockdiag python-actdiag python-nwdiag python3-graphviz
-        python --version
-        python3 -m pip --no-cache install blockdiag seqdiag actdiag nwdiag graphviz
-        export GEM_HOME="/home/$(whoami)/gems" && export PATH="$PATH:$GEM_HOME/bin"
-        gem install activesupport:6.1.3.1 activesupport:6.0.3.6 activesupport:6.0.3.5
-        gem install addressable:2.7.0 ast:2.4.2 autoprefixer-rails:9.8.6.5 bigdecimal:1.3.4
-        gem install bourbon:7.0.0 bourbon:5.1.0 bundle:0.0.1 bundler:2.2.15 cmath:1.0.0
-        gem install coffee-script:2.4.1 coffee-script-source:1.11.1 colorator:1.1.0
-        gem install colorator:0.1 commonmarker:0.17.13 concurrent-ruby:1.1.8 csv:1.0.0
-        gem install date:1.0.0 dbm:1.0.0 did_you_mean:1.2.0 dnsruby:1.61.5 em-websocket:0.5.2
-        gem install etc ethon:0.12.0 eventmachine:1.2.7 execjs:2.7.0 faraday:1.3.0
-        gem install faraday-net_http:1.0.1 fcntl:1.0.0 ffi:1.15.0 fiddle:1.0.0 fileutils:1.0.2
-        gem install forwardable-extended:2.6.0 gdbm:2.0.0 gemoji:3.0.1 github-pages:213
-        gem install github-pages-health-check:1.17.0 html-pipeline:2.14.0 html-proofer:3.18.8
-        gem install http_parser.rb:0.6.0 i18n:1.8.9 i18n:0.9.5 io-console:0.4.6 ipaddr:1.2.0
-        gem install jekyll:4.2.0 jekyll:3.9.0 jekyll:3.1.6 jekyll-autoprefixer:1.0.2 jekyll-avatar:0.7.0
-        gem install jekyll-coffeescript:1.1.1 jekyll-commonmark:1.3.1 jekyll-commonmark-ghpages:0.1.6
-        gem install jekyll-default-layout:0.1.4 jekyll-diagrams:0.10.0 jekyll-diagrams:0.2.3
-        gem install jekyll-favicon:0.2.9 jekyll-favicon:0.1.2 jekyll-feed:0.15.1 jekyll-gist:1.5.0
-        gem install jekyll-github-metadata:2.13.0 jekyll-include_sass:0.4.0 jekyll-mentions:1.6.0
-        gem install jekyll-mermaid:1.0.0 jekyll-optional-front-matter:0.3.2 jekyll-paginate:1.1.0
-        gem install jekyll-readme-index:0.3.0 jekyll-redirect-from:0.16.0 jekyll-redirect-from:0.15.0
-        gem install jekyll-relative-links:0.6.1 jekyll-remote-theme:0.4.3 jekyll-sass-converter:2.1.0
-        gem install jekyll-sass-converter:1.5.2 jekyll-seo-tag:2.7.1 jekyll-sitemap:1.4.0
-        gem install jekyll-swiss:1.0.0 jekyll-theme-architect:0.1.1 jekyll-theme-cayman:0.1.1
-        gem install jekyll-theme-dinky:0.1.1 jekyll-theme-hacker:0.1.2 jekyll-theme-leap-day:0.1.1
-        gem install jekyll-theme-merlot:0.1.1 jekyll-theme-midnight:0.1.1 jekyll-theme-minimal:0.1.1
-        gem install jekyll-theme-modernist:0.1.1 jekyll-theme-primer:0.5.4 jekyll-theme-slate:0.1.1
-        gem install jekyll-theme-tactile:0.1.1 jekyll-theme-time-machine:0.1.1 jekyll-timeago:0.14.0
-        gem install jekyll-timeago:0.13.1 jekyll-titles-from-headings:0.5.3 jekyll-watch:2.2.1
-        gem install jekyll-watch:1.5.1 jekyll_picture_tag:1.14.0 jemoji:0.12.0 json:2.5.1
-        gem install json:2.1.0 kramdown:2.3.1 kramdown:2.3.0 kramdown:1.17.0 kramdown-parser-gfm:1.1.0
-        gem install liquid:4.0.3 liquid:3.0.6 listen:3.5.0 mercenary:0.4.0 mercenary:0.3.6
-        gem install mime-types:3.3.1 mime-types-data:3.2021.0225 mini_i18n:0.8.0 mini_magick:4.11.0
-        gem install minima:2.5.1 minitest:5.14.4 minitest:5.10.3 multipart-post:2.1.1 net-telnet:0.1.1
-        gem install nokogiri:1.11.2 nokogumbo:2.0.5 objective_elements:1.1.2 octokit:4.20.0
-        gem install openssl:2.1.1 parallel:1.20.1 parser:3.0.0.0 pathutil:0.16.2 power_assert:0.2.7
-        gem install psych:3.0.2 public_suffix:4.0.6 racc:1.5.2 rainbow:3.0.0 rake:12.3.1 rb-fsevent:0.10.4
-        gem install rb-inotify:0.10.1 rdoc:6.0.1 regexp_parser:2.1.1 rexml:3.2.4 rouge:3.26.0
-        gem install rouge:1.11.1 rubocop:1.12.0 rubocop:0.93.1 rubocop-ast:1.4.1 ruby-enum:0.9.0
-        gem install ruby-progressbar:1.11.0 ruby2_keywords:0.0.4 rubygems-update:3.2.15 rubyzip:2.3.0
-        gem install safe_yaml:1.0.5 sass:3.7.4 sass-listen:4.0.0 sassc:2.4.0 sawyer:0.8.2
-        gem install scanf:1.0.0 sdbm:1.0.0 simpleidn:0.2.1 stringio strscan:1.0.0 terminal-table:2.0.0
-        gem install terminal-table:1.8.0 terminal-table:1.6.0 thor:1.1.0 thor:0.20.3 thread_safe:0.3.6
-        gem install typhoeus:1.4.0 tzinfo:2.0.4 tzinfo:1.2.9 unf:0.1.4 unf_ext:0.0.7.7 unicode-display_width:2.0.0
-        gem install unicode-display_width:1.7.0 w3c_validators:1.3.6 yell:2.2.2 zeitwerk:2.4.2
+      - uses: actions/checkout@v2
+      - name: Checkout Latest
+        run: |
+          echo $PWD && ls -alh
+          git status
+          git fetch --all
+          git pull --rebase origin master
+          git status
+          echo $PWD && ls -alh
 
-    - name: Build Website
-      run: |
-        bundle install
-        yarn global add @mermaid-js/mermaid-cli
-        echo "Building Website in $PWD" && ls -alh && env
-        rm -f Gemfile.lock
-        bundle update
-        bundle exec jekyll build -V
-        echo $PWD && ls -alh
+      - name: Setup Runner OS Cache
+        id: cache-os-packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ runner.temp }}/cache_dir
+          key: ${{ runner.os }}-cache-os-packages-v2.1
 
-    - name: Commit Changes
-      run: |
-        git checkout $(git show-ref --heads -s | head -n 1)
-        cp -rf _site/** ./
-        touch .nojekyll
-        git add -A -v
-        git config --local user.email "$(git log -1 --pretty=format:'%ae')"
-        git config --local user.name "$(git log -1 --pretty=format:'%an')"
-        git commit --amend -m "$(git log -1 --pretty=format:'%B')"
+      - name: Install Packages If Not Cached
+        if: steps.cache-os-packages.outputs.cache-hit != 'true'
+        env:
+          SOURCE: ${{ runner.temp }}/cache_dir
+        run: |
+          set +xv
+          echo "Action environment variables"
+          echo "github.workspace: ${{ github.workspace }}"
+          echo "runner.workspace: ${{ runner.workspace }}"
+          echo "runner.os: ${{ runner.os }}"
+          echo "runner.temp: ${{ runner.temp }}"
+          pwd
+          echo "SOURCE: ${SOURCE}"
+          ls -lha /
+          sudo du -h -d 1 / 2> /dev/null || true
+          sudo apt update
+          echo "Set up snapshot"
+          mkdir -p "${{ runner.temp }}"/snapshots/
+          echo "Install tools"
+          sudo rm -f /var/lib/apt/lists/lock
+          echo "Take first snapshot"
+          sudo find / \
+                -type f,l \
+                -not \( -path "/sys*" -prune \) \
+                -not \( -path "/proc*" -prune \) \
+                -not \( -path "/mnt*" -prune \) \
+                -not \( -path "/dev*" -prune \) \
+                -not \( -path "/run*" -prune \) \
+                -not \( -path "/etc/mtab*" -prune \) \
+                -not \( -path "/var/cache/apt/archives*" -prune \) \
+                -not \( -path "/tmp*" -prune \) \
+                -not \( -path "/var/tmp*" -prune \) \
+                -not \( -path "/var/backups*" \) \
+                -not \( -path "/boot*" -prune \) \
+                -not \( -path "/vmlinuz*" -prune \) \
+                > "${{ runner.temp }}"/snapshots/snapshot_01.txt 2> /dev/null \
+                || true
+          echo "Install dependencies"
+          sudo apt-get install -y libgdbm-dev libgdbm-compat-dev \
+          fonts-linuxlibertine texlive-lang-french texlive-latex-base texlive-latex-recommended wget
+          echo "Take second snapshot"
+          sudo find / \
+                -type f,l \
+                -not \( -path "/sys*" -prune \) \
+                -not \( -path "/proc*" -prune \) \
+                -not \( -path "/mnt*" -prune \) \
+                -not \( -path "/dev*" -prune \) \
+                -not \( -path "/run*" -prune \) \
+                -not \( -path "/etc/mtab*" -prune \) \
+                -not \( -path "/var/cache/apt/archives*" -prune \) \
+                -not \( -path "/tmp*" -prune \) \
+                -not \( -path "/var/tmp*" -prune \) \
+                -not \( -path "/var/backups*" \) \
+                -not \( -path "/boot*" -prune \) \
+                -not \( -path "/vmlinuz*" -prune \) \
+                > "${{ runner.temp }}"/snapshots/snapshot_02.txt 2> /dev/null \
+                || true
+          echo "Parse for Changes"
+          diff -C 1 \
+              --color=always \
+              "${{ runner.temp }}"/snapshots/snapshot_01.txt \
+              "${{ runner.temp }}"/snapshots/snapshot_02.txt \
+              | grep -E "^\+" \
+              | sed -E s/..// \
+              > "${{ runner.temp }}"/snapshots/snapshot_new_files.txt
+          < "${{ runner.temp }}"/snapshots/snapshot_new_files.txt wc -l
+          ls -lha "${{ runner.temp }}"/snapshots/
+          echo "Make cache directory"
+          rm -fR "${SOURCE}"
+          mkdir -p "${SOURCE}"
+          while IFS= read -r LINE; do
+            sudo cp -a --parent "${LINE}" "${SOURCE}"
+          done < "${{ runner.temp }}"/snapshots/snapshot_new_files.txt
+          ls -lha "${SOURCE}"
+          sudo du -sh "${SOURCE}" || true
 
-    - name: Deploy Website
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.JEKYLL_PAT }}
-        branch: refs/heads/gh-pages
-        force: true
+      - name: Installing Cached Packages
+        if: steps.cache-os-packages.outputs.cache-hit == 'true'
+        env:
+          SOURCE: ${{ runner.temp }}/cache_dir
+        run: |
+          echo "Installing Cached Packages"
+          ls -lha "${SOURCE}"
+          sudo cp --force --recursive "${SOURCE}"/. /
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Set Python w/ Caching
+        id: cache-py-packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('.github/scripts/py-deps.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
+      # Potential, untested improvement of cached dependencies
+      # - name: Set Python w/ Caching
+      #   id: cache-py-packages
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ${{ env.pythonLocation }}
+      #     key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('.github/scripts/py-deps.txt') }}
+
+      - name: Install Python Dependencies If Not Cached
+        if: steps.cache-py-packages.outputs.cache-hit != 'true'
+        run: sudo pip install --upgrade --upgrade-strategy eager -r .github/scripts/py-deps.txt 
+
+      # - name: Set Ruby Caching
+      #   id: cache-ruby-packages
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: vendor/bundle
+      #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-gems-
+
+      - name: Initialize Ruby
+        id: cache-ruby-packages
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+
+      - name: Install Jekyll Dependencies If Not Cached
+        if: steps.cache-ruby-packages.outputs.cache-hit != 'true'
+        run: |
+          gem install activesupport addressable ast autoprefixer-rails bigdecimal bourbon \
+          bundle bundler cmath coffee-script coffee-script-source colorator commonmarker \
+          concurrent-ruby csv date did_you_mean dnsruby em-websocket etc ethon eventmachine \
+          execjs faraday faraday-net_http fcntl ffi fiddle fileutils forwardable-extended \
+          gemoji github-pages github-pages-health-check html-pipeline html-proofer http_parser.rb \
+          i18n io-console ipaddr jekyll jekyll-autoprefixer jekyll-avatar jekyll-coffeescript \
+          jekyll-commonmark jekyll-commonmark-ghpages jekyll-default-layout jekyll-diagrams \
+          jekyll-favicon jekyll-feed jekyll-gist jekyll-github-metadata jekyll-include_sass \
+          jekyll-mentions jekyll-mermaid jekyll-optional-front-matter jekyll-paginate \
+          jekyll-readme-index jekyll-redirect-from jekyll-relative-links jekyll-remote-theme \
+          jekyll-sass-converter jekyll-seo-tag jekyll-sitemap jekyll-swiss jekyll-theme-architect \
+          jekyll-theme-cayman jekyll-theme-dinky jekyll-theme-hacker jekyll-theme-leap-day \
+          jekyll-theme-merlot jekyll-theme-midnight jekyll-theme-minimal jekyll-theme-modernist \
+          jekyll-theme-primer jekyll-theme-slate jekyll-theme-tactile jekyll-theme-time-machine \
+          jekyll-timeago jekyll-titles-from-headings jekyll-watch jekyll_picture_tag:1.14.0 jemoji \
+          json kramdown kramdown-parser-gfm liquid listen mercenary mime-types mime-types-data \
+          mini_i18n mini_magick minima minitest multipart-post net-telnet nokogiri nokogumbo \
+          objective_elements octokit openssl parallel parser pathutil power_assert \
+          psych public_suffix racc rainbow rake rb-fsevent rdoc regexp_parser rexml rouge \
+          rubocop rubocop-ast ruby-enum ruby2_keywords rubygems-update rubyzip sass sass-listen \
+          sassc sawyer scanf sdbm simpleidn stringio strscan terminal-table thor thread_safe \
+          typhoeus tzinfo unf unf_ext unicode-display_width w3c_validators yell zeitwerk
+          yarn global add @mermaid-js/mermaid-cli
+          bundle install
+
+      - name: Jekyll Build the Website
+        env:
+          GITHUB_REPOSITORY:  AESD-Course-Project/AESD-Course-Project.github.io
+          GITHUB_TOKEN: ${{ secrets.AESD_PAT }}
+          GITHUB_USER: ${{ github.actor }}
+        run: |
+          echo $PWD && ls -alh && env
+          ./.github/scripts/jekyll_prep_wikimd
+          echo $PWD && ls -alh && env
+          bundle exec jekyll build -V
+          echo $PWD && ls -alh && env
+          
+      - name: Publish to GH-Pages
+        env:
+          GITHUB_REPOSITORY: AESD-Course-Project/AESD-Course-Project.github.io
+          GITHUB_TOKEN: ${{ secrets.AESD_PAT }}
+          GITHUB_USER: ${{ github.actor }}
+        run: |
+          echo $PWD && ls -alh
+          git config --global user.email "$(git log -1 --pretty=format:'%ae')"
+          git config --global user.name "$(git log -1 --pretty=format:'%an')"
+          export COMMIT_MSG="$(git log -1 --pretty=format:'%B')"
+          git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git public/
+          cd public/ 
+          git checkout gh-pages
+          git status
+          echo $PWD && ls -alh
+          cp -rf ../_site/* ./
+          touch .nojekyll
+          git add -A -v
+          echo $PWD && ls -alh
+          git status
+          git commit -m "$COMMIT_MSG"
+          git push
+          git status
