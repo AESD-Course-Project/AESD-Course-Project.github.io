@@ -157,33 +157,33 @@ jobs:
           ruby-version: 2.7
           bundler-cache: true
 
-      - name: Install Jekyll Dependencies If Not Cached
-        if: steps.cache-ruby-packages.outputs.cache-hit != 'true'
-        run: |
-          gem install activesupport addressable ast autoprefixer-rails bigdecimal bourbon \
-          bundle bundler cmath coffee-script coffee-script-source colorator commonmarker \
-          concurrent-ruby csv date did_you_mean dnsruby em-websocket etc ethon eventmachine \
-          execjs faraday faraday-net_http fcntl ffi fiddle fileutils forwardable-extended \
-          gemoji github-pages github-pages-health-check html-pipeline html-proofer http_parser.rb \
-          i18n io-console ipaddr jekyll jekyll-autoprefixer jekyll-avatar jekyll-coffeescript \
-          jekyll-commonmark jekyll-commonmark-ghpages jekyll-default-layout jekyll-diagrams \
-          jekyll-favicon jekyll-feed jekyll-gist jekyll-github-metadata jekyll-include_sass \
-          jekyll-mentions jekyll-mermaid jekyll-optional-front-matter jekyll-paginate \
-          jekyll-readme-index jekyll-redirect-from jekyll-relative-links jekyll-remote-theme \
-          jekyll-sass-converter jekyll-seo-tag jekyll-sitemap jekyll-swiss jekyll-theme-architect \
-          jekyll-theme-cayman jekyll-theme-dinky jekyll-theme-hacker jekyll-theme-leap-day \
-          jekyll-theme-merlot jekyll-theme-midnight jekyll-theme-minimal jekyll-theme-modernist \
-          jekyll-theme-primer jekyll-theme-slate jekyll-theme-tactile jekyll-theme-time-machine \
-          jekyll-timeago jekyll-titles-from-headings jekyll-watch jekyll_picture_tag:1.14.0 jemoji \
-          json kramdown kramdown-parser-gfm liquid listen mercenary mime-types mime-types-data \
-          mini_i18n mini_magick minima minitest multipart-post net-telnet nokogiri nokogumbo \
-          objective_elements octokit openssl parallel parser pathutil power_assert \
-          psych public_suffix racc rainbow rake rb-fsevent rdoc regexp_parser rexml rouge \
-          rubocop rubocop-ast ruby-enum ruby2_keywords rubygems-update rubyzip sass sass-listen \
-          sassc sawyer scanf sdbm simpleidn stringio strscan terminal-table thor thread_safe \
-          typhoeus tzinfo unf unf_ext unicode-display_width w3c_validators yell zeitwerk
-          yarn global add @mermaid-js/mermaid-cli
-          bundle install
+#       - name: Install Jekyll Dependencies If Not Cached
+#         if: steps.cache-ruby-packages.outputs.cache-hit != 'true'
+#         run: |
+#           gem install activesupport addressable ast autoprefixer-rails bigdecimal bourbon \
+#           bundle bundler cmath coffee-script coffee-script-source colorator commonmarker \
+#           concurrent-ruby csv date did_you_mean dnsruby em-websocket etc ethon eventmachine \
+#           execjs faraday faraday-net_http fcntl ffi fiddle fileutils forwardable-extended \
+#           gemoji github-pages github-pages-health-check html-pipeline html-proofer http_parser.rb \
+#           i18n io-console ipaddr jekyll jekyll-autoprefixer jekyll-avatar jekyll-coffeescript \
+#           jekyll-commonmark jekyll-commonmark-ghpages jekyll-default-layout jekyll-diagrams \
+#           jekyll-favicon jekyll-feed jekyll-gist jekyll-github-metadata jekyll-include_sass \
+#           jekyll-mentions jekyll-mermaid jekyll-optional-front-matter jekyll-paginate \
+#           jekyll-readme-index jekyll-redirect-from jekyll-relative-links jekyll-remote-theme \
+#           jekyll-sass-converter jekyll-seo-tag jekyll-sitemap jekyll-swiss jekyll-theme-architect \
+#           jekyll-theme-cayman jekyll-theme-dinky jekyll-theme-hacker jekyll-theme-leap-day \
+#           jekyll-theme-merlot jekyll-theme-midnight jekyll-theme-minimal jekyll-theme-modernist \
+#           jekyll-theme-primer jekyll-theme-slate jekyll-theme-tactile jekyll-theme-time-machine \
+#           jekyll-timeago jekyll-titles-from-headings jekyll-watch jekyll_picture_tag:1.14.0 jemoji \
+#           json kramdown kramdown-parser-gfm liquid listen mercenary mime-types mime-types-data \
+#           mini_i18n mini_magick minima minitest multipart-post net-telnet nokogiri nokogumbo \
+#           objective_elements octokit openssl parallel parser pathutil power_assert \
+#           psych public_suffix racc rainbow rake rb-fsevent rdoc regexp_parser rexml rouge \
+#           rubocop rubocop-ast ruby-enum ruby2_keywords rubygems-update rubyzip sass sass-listen \
+#           sassc sawyer scanf sdbm simpleidn stringio strscan terminal-table thor thread_safe \
+#           typhoeus tzinfo unf unf_ext unicode-display_width w3c_validators yell zeitwerk
+#           yarn global add @mermaid-js/mermaid-cli
+#           bundle install
 
       - name: Jekyll Build the Website
         env:
