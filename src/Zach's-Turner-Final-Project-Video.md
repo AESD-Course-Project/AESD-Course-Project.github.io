@@ -27,5 +27,3 @@ The most important topics I learned from this project were:
 * Lesson 1
 * Lesson 2
 * ...
-
-

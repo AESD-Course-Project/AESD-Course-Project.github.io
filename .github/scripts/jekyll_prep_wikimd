@@ -15,16 +15,16 @@ FROM_WIKI="TO_WIKI"
 [ $# -gt 0 ] && FROM_WIKI="${1}"
 if [ "${FROM_WIKI}" = "TO_WIKI" ]; then
   echo "Overwritting Wiki with src/"
-  src_docs="$(ls src/*.md)"
+  src_docs="$(find src/ -type f -name "*.md")"
 
   mkdir -p public/ && rm -rf public/
   git clone "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git" public/
   cd public/ && git fetch --all && git pull --rebase origin master && cd ../
 
   for sd in ${src_docs}; do
-    echo "Stripping Headers"
-    [ "$(head -n 1 "${sd}")" = "---" ] && printf "%s\n" "$(tail -n +7 "${sd}")" > "${sd}"
-    echo "copying ${sd} to public/"
+    [ "$(head -n 1 "${sd}")" = "---" ] && \
+      echo "Stripping Headers from \"${sd}\" and Moving into Wiki Repo (public/)" && \
+      printf "%s\n" "$(tail -n +7 "${sd}")" > "${sd}"
     cp -f "${sd}" "public/"
   done
 
@@ -47,6 +47,18 @@ if [ "${FROM_WIKI}" = "TO_WIKI" ]; then
   # Clean up
   rm -rf public/
 
+  # Auto-Prepends Liquid Header to all Markdown files
+  page_docs="$(find src/ -type f -name "*.md")"
+  for pd in ${page_docs}; do
+    title="$(basename "${pd}" .md)"
+    if [ "$(basename "${pd}" .md)" != "Home" ]; then # Ignore Wiki's "Home"
+      if [ "$(head -n 1 "${pd}")" != "---" ]; then # Only prepend docs missing headers
+        echo "Prepending Liquid Header to ${pd}"
+        sed -i "1s;^;---\nlayout: default\ntitle: ${title}\npermalink: /src/${title}.html\n---\n\n;" "${pd}"
+      fi
+    fi
+  done
+
   exit 0
 
 # If updating gh-pages with wiki edits
@@ -57,7 +69,7 @@ elif [ "${FROM_WIKI}" = "FROM" ]; then
 
   # Clone Wiki and get files
   git clone "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git" public/
-  wiki_docs="$(ls public/*.md)"
+  wiki_docs="$(find public/ -type f -name "*.md")"
 
   # Copy any updated files note already in src dir (Not Home.md though) 
   for md in ${wiki_docs}; do
