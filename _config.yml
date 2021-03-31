@@ -102,4 +102,6 @@ exclude:
   - README.md
   - site.gemspec
   - site-theme-0.0.1.gem
-  - cip_repo/
+  - as_repo/
+  - cp_repo/
+  - zt_repo/
