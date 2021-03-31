@@ -16,21 +16,11 @@ Any pending issues associated to a prior Sprint when that week's Sprint is finis
 
 The Course Project's [Projects](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/projects/1) tab will automatically handle the kanban workflow of the project. Below is a synopsis of the scheduling.    
    
-| Task (milestone linked)  |     Responsibility     |     Target Date     |     Status |     New Expected<br/>Completion Date     |
-|           :---           |         :----:         |        :----:       |    :----:    |                  :----:                  |
-| **SPRINT 1**                                       | **ALL** | **START DATE: Mar 28** | :heavy_plus_sign: | **April 29** |
-| [Yocto on Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/5)                                         | Caleb Provost  | Mar 29th | :heavy_plus_sign: | April 4 |
-| [Define Communication IO](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/7)    | Zach Turner    | Mar 29th | :x: | April 4 |
-| [Get Nano demo running](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/6)                     | Arpit Savarkar | Mar 27th | :heavy_plus_sign: | April 4 |
-| [Arduino Setup Script post build](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/4)    |  | Mar 31 | :x: | N/A |
-| **SPRINT 2**                                       | **ALL** | **START DATE: April 5** | :x: | **April 11** |
-
-
-## Icon Legend
-:x: Not started (Issue should include DoD)
-
-:heavy_check_mark: Complete (Issue should contain detail about implementation, DoD in description should be up to date)
-
-:heavy_plus_sign: In Progress (Issue have up to date DoD, should contain detail about status)
-
-:red_circle: Blocked (Issue should include DoD and contain link to blocker)
+|  Task (milestone linked)  |     Responsibility     |     Target Date     |     Status |     New Expected<br/>Completion Date     |
+|            :---           |         :----:         |        :----:       |    :----:    |                  :----:                  |
+| **SPRINT 1**              |          **ALL**       | **START DATE: Mar 28** | ![Status](https://img.shields.io/github/milestones/progress/AESD-Course-Project/AESD-Course-Project.github.io/1?label=&style=for-the-badge) | **April 29** || [Yocto on Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/5)                                         | Caleb Provost  | Mar 29th | :heavy_plus_sign: | April 4 |
+| [Yocto on Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/5)                                         | Caleb Provost  | Mar 29th | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/5?label=&style=for-the-badge) | April 4 |
+| [Define Communication IO](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/7)    | Zach Turner    | Mar 29th | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/7?label=&style=for-the-badge) | April 4 |
+| [Get Nano demo running](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/6)                     | Arpit Savarkar | Mar 27th | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/6?label=&style=for-the-badge) | April 4 |
+| [Arduino Setup Script post build](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/4)    |  | Mar 31 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/4?label=&style=for-the-badge) | N/A |
+| **SPRINT 2**                                       | **ALL** | **START DATE: April 5** | ![Status](https://img.shields.io/github/milestones/progress/AESD-Course-Project/AESD-Course-Project.github.io/2?label=&style=for-the-badge) | **April 11** |

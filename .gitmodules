@@ -1,0 +1,9 @@
+[submodule "cp_repo"]
+	path = cp_repo
+	url = https://github.com/cu-ecen-5013/final-project-CalebProvost.git
+[submodule "zt_repo"]
+	path = zt_repo
+	url = https://github.com/cu-ecen-5013/final-project-ZachTurner07.git
+[submodule "as_repo"]
+	path = as_repo
+	url = https://github.com/cu-ecen-5013/final-project-arpit6232.git
