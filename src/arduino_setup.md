@@ -139,8 +139,45 @@ TEST_CAMERA_DIR="${INSTALL_DIR}/Arduino/libraries/arduino-library/examples/test_
 
 ```
 
-- Check to see if the Camera is working by testing output over ```/dev/ttyACM0```
+- Setup a arduino build to detect a person (Camera test necessary before this).
+```
+CURR_DIR=$(pwd)
+INSTALL_DIR=${HOME}
+ARDUINO_VERSION=1.8.10
+cd $INSTALL_DIR
+PORT="/dev/ttyACM0"
+BOARD_NAME="Arduino Nano 33 BLE"
+FQBN="arduino:mbed:nano33ble"
+ARDUINO_CORE="arduino:mbed"
+
+
+./arduino-cli core install ${ARDUINO_CORE}
+
+./arduino-cli config init
+
+./arduino-cli config set library.enable_unsafe_install true
+
+./arduino-cli lib install "Arduino_TensorFlowLite@2.4.0-ALPHA"
+
+./arduino-cli lib install --git-url "https://github.com/arpit6232/arduino-library"
+
+./arduino-cli lib install "Arduino_LSM9DS1@1.1.0"
+
+./arduino-cli lib install "ArduinoBLE@1.1.3"
+
+TEST_CAMERA_DIR="${INSTALL_DIR}/Arduino/libraries/arduino-library/examples/person_detection"
+
+./arduino-cli compile -b ${FQBN} ${TEST_CAMERA_DIR} -v
+
+sudo ./arduino-cli upload -b ${FQBN} -p ${PORT} ${TEST_CAMERA_DIR} -v
+
+sudo ./arduino-cli board attach serial:///dev/ttyACM0 ${TEST_CAMERA_DIR}
+
+```
+
+- Check to see if the Camera is working by printing the test output over ```/dev/ttyACM0```
 ```
 sudo stty -F /dev/ttyACM0 raw 115200
 cat /dev/ttyACM0 > raw_points.txt
 ```
+
