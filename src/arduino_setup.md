@@ -64,7 +64,7 @@ PWDN / PDN  | 20 | A3 |
     - ![Step 10](img/TinyML_10.png)        
 
 
-## Driver and Libraries Installation for Arduino Setup
+## Driver and Libraries Installation for Arduino Setup (ON JETSON NANO)
 
 - Install Dependencies 
 ```
@@ -75,7 +75,7 @@ sudo apt-get install -y tar
 sudo apt-get install -y curl
 ```
 
-- Download IDE and setup environemnt variables 
+- Download IDE and setup environemnt variables (On Jetson Nano)
 ```
 CURR_DIR=$(pwd)
 INSTALL_DIR=${HOME}
@@ -87,6 +87,19 @@ sudo ./install.sh
 ./arduino-linux-setup.sh "$USER"
 echo "You can delete the tar file if desired: arduino-"${ARDUINO_VERSION}"-linuxaarch64.tar.xz"
 ```
+- Download IDE and setup environemnt variables (On Ubuntu)
+```
+CURR_DIR=$(pwd)
+INSTALL_DIR=${HOME}
+ARDUINO_VERSION=1.8.10
+wget -N https://downloads.arduino.cc/arduino-$ARDUINO_VERSION-linux64.tar.xz --no-check-certificate
+tar -C $INSTALL_DIR/ -xvf arduino-${ARDUINO_VERSION}-linux64.tar.xz
+cd $INSTALL_DIR/arduino-${ARDUINO_VERSION}
+sudo ./install.sh
+./arduino-linux-setup.sh "$USER"
+echo "You can delete the tar file if desired: arduino-"${ARDUINO_VERSION}"-linux64.tar.xz"
+```
+
 - A REBOOT WOULD BE NEEDED AFTER THIS STEP 
 
 - Download Arduino CLI 
