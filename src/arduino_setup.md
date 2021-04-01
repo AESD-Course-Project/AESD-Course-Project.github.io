@@ -121,7 +121,7 @@ ARDUINO_CORE="arduino:mbed"
 
 ./arduino-cli lib install "Arduino_TensorFlowLite@2.4.0-ALPHA"
 
-./arduino-cli lib install --git-url "https://github.com/tinyMLx/arduino-library.git"
+./arduino-cli lib install --git-url "https://github.com/arpit6232/arduino-library"
 
 ./arduino-cli lib install "Arduino_LSM9DS1@1.1.0"
 
