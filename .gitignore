@@ -24,3 +24,6 @@ _sass/
 _posts/
 _site/
 .rubocop.yml
+cp_repo/
+as_repo/
+zt_repo/
