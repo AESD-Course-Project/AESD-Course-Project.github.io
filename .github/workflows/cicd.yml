@@ -2,9 +2,6 @@ name: Build & Deploy Website
 on:
   push:
     branches: [ master ]
-  # Runs at 600 UTC daily
-  schedule:
-  - cron: "0 6 * * *"
 
 jobs:
   AESD-Course-Project-CICD:
