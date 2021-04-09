@@ -1,9 +1,3 @@
----
-layout: default
-title: Project-Schedule
-permalink: /src/Project-Schedule.html
----
-
 # **Project-Schedule**
 Below is a table reflecting the progress of the project's schedule.  
   
@@ -15,7 +9,7 @@ Any pending issues associated to a prior Sprint when that week's Sprint is finis
 
 
 The Course Project's [Projects](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/projects/1) tab will automatically handle the kanban workflow of the project. Below is a synopsis of the scheduling.    
-   
+  
 |  Task (milestone linked)  |     Responsibility     |     Target Date     |     Status |     New Expected<br/>Completion Date     |
 |            :---           |         :----:         |        :----:       |    :----:    |                  :----:                  |
 | **SPRINT 1**              |          **ALL**       | **START DATE: Mar 28** | ![Status](https://img.shields.io/github/milestones/progress/AESD-Course-Project/AESD-Course-Project.github.io/1?label=&style=for-the-badge) | **April 29** |
@@ -24,3 +18,11 @@ The Course Project's [Projects](https://github.com/AESD-Course-Project/AESD-Cour
 | [Get Nano demo running](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/6)    | Arpit Savarkar | Mar 27th | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/6?label=&style=for-the-badge) | April 4 |
 | [Arduino Setup Script post build](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/4)    |  | Mar 31 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/4?label=&style=for-the-badge) | N/A |
 | **SPRINT 2**              | **ALL** | **START DATE: April 5** | ![Status](https://img.shields.io/github/milestones/progress/AESD-Course-Project/AESD-Course-Project.github.io/2?label=&style=for-the-badge) | **April 11** |
+| [Update Arduino How-to](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/9)    | Arpit Savarkar | April 5 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/9?label=&style=for-the-badge) | April 11 |
+| [Update Dockerfile to Absolute Path the Build Script](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/10)    | Caleb Provost | April 5 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/10?label=&style=for-the-badge) | April 11 |
+| [Arduino BLE 33 Setup on Jetson](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/11)    | Arpit Savarkar | April 5 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/11?label=&style=for-the-badge) | April 11 |
+| [Dockerize Arduino Build Environment](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/12)    | Caleb Provost | April 5 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/12?label=&style=for-the-badge) | April 11 |
+| [Arduino Project Code in Docker](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/13)    | Arpit Savarkar | April 5 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/13?label=&style=for-the-badge) | April 11 |
+| [Integrate Subsystems](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/14)    | Zach Turner | April 5 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/14?label=&style=for-the-badge) | April 11 |
+| **SPRINT 3**              | **ALL** | **START DATE: April 12** | ![Status](https://img.shields.io/github/milestones/progress/AESD-Course-Project/AESD-Course-Project.github.io/3?label=) | **April 18** |
+| **Demo**                  | **ALL** | **START DATE: April 19** | ![Status](https://img.shields.io/github/milestones/progress/AESD-Course-Project/AESD-Course-Project.github.io/4?label=) | **April 24** |
