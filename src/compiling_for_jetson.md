@@ -34,3 +34,7 @@ Our application has a Makefile that allows it to be compiled for a specfic targe
 `make all CC=aarch64-linux-gnu-gcc`
 
 Once compiled, the exectuable is ready to be transferred to the board.
+
+## Transferring Application to the Board
+
+If the application was built within a VM, it needs to be transferred from the VM to the host machine. Power on the Jetson Nano, and connect to it in a headless mode via SSH and `scp` the executable to the Jetson Nano.
