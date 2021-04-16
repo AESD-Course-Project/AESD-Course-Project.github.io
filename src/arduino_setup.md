@@ -125,7 +125,7 @@ ARDUINO_CORE="arduino:mbed"
 
 ./arduino-cli lib install "Arduino_LSM9DS1@1.1.0"
 
-./arduino-cli lib install "ArduinoBLE@1.1.3"
+./arduino-cli lib install "ArduinoBLE@1.2.0"
 
 TEST_CAMERA_DIR="${INSTALL_DIR}/Arduino/libraries/arduino-library/examples/test_camera"
 
