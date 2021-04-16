@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Caleb-Provost&#39;s-Final-Video-Page</title>
+  <title>GPIO_setup</title>
   <meta name="description" content="Course Project for UCB's ECEN 5713 Spring `21">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://AESD-Course-Project.github.io/src/Caleb-Provost's-Final-Video-Page.html">
+  <link rel="canonical" href="https://AESD-Course-Project.github.io/src/GPIO_setup.html">
   <link rel="alternate" type="application/rss+xml" title="AESD Course Project" href="https://AESD-Course-Project.github.io/feed.xml">
 </head>
 
@@ -102,35 +102,50 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <h1 id="overview">Overview</h1>
+        <h1 id="electronic-and-hardware-setup-for-gpio-and-seven-segment-display">Electronic and Hardware Setup for GPIO and Seven Segment Display</h1>
 
-<p>This page provide’s an overview of Caleb Provost’s contribution to the AESD Final Project <Projectname></Projectname></p>
+<h2 id="gpio">GPIO</h2>
 
-<h1 id="video-outline">Video Outline</h1>
-<p>See &lt;TODO: insert link to video&gt;</p>
+<p>This Readme talks about basic electronic setup for LED on Jetson Nano</p>
 
-<p>The video demonstrates:</p>
+<h3 id="gpio-hardware">GPIO Hardware</h3>
 <ul>
-  <li>Setup of widget X</li>
-  <li>Connect to widget X using widget Y</li>
-  <li>Show feature Z of Widget X</li>
+  <li>1 Qty 5mm red LED</li>
+  <li>1 Qty  P2N2222 Transistor</li>
+  <li>1 Qty 330Ω resistor</li>
+  <li>1 Qty  10kΩ resistor</li>
+  <li>Hookup wire</li>
+  <li>Breakboard</li>
 </ul>
 
-<h2 id="challenges">Challenges</h2>
-<p>My most difficult challenge when implementing this project were:</p>
+<h3 id="gpio-setup">GPIO Setup</h3>
+<p><img src="/src/img/gpio_setup.png" alt="gpio setup" /></p>
+
+<h3 id="gpio-electronic-wiring">GPIO Electronic Wiring</h3>
+<p>The Collector, Base, and Emitter are different depending on which part number you have. We’re using a P2N2222 here. We will be wiring the red wire to +5V on Pin 2 on the Jetson, the black wire to GND on pin 6, and the transistor Base through the base resistor on Pin 12.</p>
+
+<h3 id="gpio-result">GPIO Result</h3>
+<p><img src="/src/img/gpio_setup_actual.png" alt="gpio setup actual" /></p>
+
+<h2 id="seven-segment-display">Seven Segment Display</h2>
+
+<h3 id="seven-segment-display-hardware">Seven Segment Display Hardware</h3>
 <ul>
-  <li>Challenge 1</li>
-  <li>Challenge 2</li>
-  <li>…</li>
+  <li>1 Qty <a href="https://www.adafruit.com/product/880">4 Character 7 Segment LED made by Adafruit</a></li>
+  <li>Hookup wire</li>
+  <li>Breakboard</li>
 </ul>
 
-<h2 id="lessons-learned">Lessons Learned</h2>
-<p>The most important topics I learned from this project were:</p>
+<h3 id="seven-segment-electronic-wiring">Seven Segment Electronic Wiring</h3>
 <ul>
-  <li>Lesson 1</li>
-  <li>Lesson 2</li>
-  <li>…</li>
+  <li>GND J3A1-14 -&gt; LED Backpack (GND)</li>
+  <li>VCC J3A1-1 -&gt; LED Backpack (VCC – 5V)</li>
+  <li>SCL J3A1-18 -&gt; LED Backpack (SCL)</li>
+  <li>SDA J3A1-20 -&gt; LED Backpack (SDA)</li>
 </ul>
+
+<h2 id="code">Code</h2>
+<p><a href="https://github.com/cu-ecen-5013/final-project-arpit6232/tree/main/jetson_display">Link to Code</a></p>
 
       </div>
     </div>
