@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>AESD Course Project</title>
+  <title>communication-icd</title>
   <meta name="description" content="Course Project for UCB's ECEN 5713 Spring `21">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://AESD-Course-Project.github.io/">
+  <link rel="canonical" href="https://AESD-Course-Project.github.io/src/communication-icd.html">
   <link rel="alternate" type="application/rss+xml" title="AESD Course Project" href="https://AESD-Course-Project.github.io/feed.xml">
 </head>
 
@@ -110,111 +110,34 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <hr />
+<p>title: Serial Communication
+—</p>
 
-  <h1 class="page-heading">Wiki Landing Page</h1>
+<h1 id="serial-communication">Serial Communication</h1>
 
-  <ul class="page-list">
-    
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Arpit-Savarkar's-Final-Project-Video.html">Arpit-Savarkar's-Final-Project-Video</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Caleb-Provost's-Final-Video-Page.html">Caleb-Provost's-Final-Video-Page</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Docker-Scratch-N-Sniff.html">Docker-Scratch-N-Sniff</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/GPIO_setup.html">GPIO_setup</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Project-Overview.html">Project-Overview</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Project-Schedule.html">Project-Schedule</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/TinyML.html">TinyML</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Zach's-Turner-Final-Project-Video.html">Zach's-Turner-Final-Project-Video</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/about.html">About</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/arduino_setup.html">arduino_setup</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/communication-icd.html">communication-icd</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/compiling_for_jetson.html">compiling_for_jetson</a>
-      </h2></li>
-    
-    
-    
-    
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/install_jetson_yocto.html">install_jetson_yocto</a>
-      </h2></li>
-    
-    
-    
-    
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/docs/subsystem_communication.html">Communication Between Subsystems</a>
-      </h2></li>
-    
-    
-  </ul>
+<h2 id="uml-diagram">UML Diagram</h2>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>The UML sequence diagram below describes the communication flow through our application.</p>
 
-</div>
+<p><img src="img/uml_diagram.png" alt="UML Sequence Diagram" /></p>
+
+<h2 id="is-connected">Is Connected</h2>
+
+<p>Once the application is ran, it executes an <code class="language-plaintext highlighter-rouge">isConnected</code> which sends a byte to the Arduino to see if it is connected. The Arduino is listening for this byte (<code class="language-plaintext highlighter-rouge">'a'</code>) and responds with <code class="language-plaintext highlighter-rouge">acknowledge\r</code>.</p>
+
+<p>One TODO for this part is to validate the response from the Arduino before continuing with the application.</p>
+
+<h2 id="execute-human-recognition">Execute Human Recognition</h2>
+
+<p>After the application has verified the Arduino is connected, it can either the facial recognition once or continuously.</p>
+
+<h3 id="execute-single">Execute Single</h3>
+<p>If the byte <code class="language-plaintext highlighter-rouge">'s'</code> is sent to the Arduino, it will execute one loop of the facial recognition processing. The repsonse the Jetson Nano will get will be either <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code> depending on the success of the processing loop.</p>
+
+<h3 id="execute-continous">Execute Continous</h3>
+
+<p>If the byte <code class="language-plaintext highlighter-rouge">'c'</code> is sent, the Arduino will begin executing continously and continue to respond with <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>.</p>
 
       </div>
     </div>

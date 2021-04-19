@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>AESD Course Project</title>
+  <title>Communication Between Subsystems</title>
   <meta name="description" content="Course Project for UCB's ECEN 5713 Spring `21">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://AESD-Course-Project.github.io/">
+  <link rel="canonical" href="https://AESD-Course-Project.github.io/docs/subsystem_communication.html">
   <link rel="alternate" type="application/rss+xml" title="AESD Course Project" href="https://AESD-Course-Project.github.io/feed.xml">
 </head>
 
@@ -110,111 +110,51 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post">
 
-  <h1 class="page-heading">Wiki Landing Page</h1>
+  <header class="post-header">
+    <h1 class="post-title">Communication Between Subsystems</h1>
+  </header>
 
-  <ul class="page-list">
-    
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Arpit-Savarkar's-Final-Project-Video.html">Arpit-Savarkar's-Final-Project-Video</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Caleb-Provost's-Final-Video-Page.html">Caleb-Provost's-Final-Video-Page</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Docker-Scratch-N-Sniff.html">Docker-Scratch-N-Sniff</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/GPIO_setup.html">GPIO_setup</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Project-Overview.html">Project-Overview</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Project-Schedule.html">Project-Schedule</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/TinyML.html">TinyML</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/Zach's-Turner-Final-Project-Video.html">Zach's-Turner-Final-Project-Video</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/about.html">About</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/arduino_setup.html">arduino_setup</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/communication-icd.html">communication-icd</a>
-      </h2></li>
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/compiling_for_jetson.html">compiling_for_jetson</a>
-      </h2></li>
-    
-    
-    
-    
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/src/install_jetson_yocto.html">install_jetson_yocto</a>
-      </h2></li>
-    
-    
-    
-    
-    
-    
-    
-      <li><h2>
-          <a class="page-link" href="/docs/subsystem_communication.html">Communication Between Subsystems</a>
-      </h2></li>
-    
-    
-  </ul>
+  <div class="post-content">
+    <h1 id="communication-between-subsystems">Communication Between Subsystems</h1>
+<h2 id="tradespace">Tradespace</h2>
+<p>Couple of options in the tradespace:</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<ul>
+  <li>Serial communication between Jetson and Arduino
+    <ul>
+      <li>Simplist electrical connection, connect USBA on Jetson to MicroUSB on Arduino</li>
+      <li>Use TTY device on Jetson to communicate serially with Arduino</li>
+      <li>Could create our own daemon to interact with the TTY device</li>
+    </ul>
+  </li>
+  <li>I2C between Jetson and Arduino
+    <ul>
+      <li>Lower level protocol, but still supported by both ends</li>
+      <li>Would need to research how to interact with I2C communication from linux on Jetson</li>
+    </ul>
+  </li>
+  <li>Potential Stretch (and a big stretch at that)
+    <ul>
+      <li>Install WiFi/Bluettoth network card onto Jetson board</li>
+      <li>Communicate with Arduino over Bluetooth</li>
+      <li>https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/ –&gt;</li>
+    </ul>
+  </li>
+</ul>
 
-</div>
+<h2 id="current-communication-plan">Current Communication Plan</h2>
+
+<ul>
+  <li>Serial communication between Arduino and Jetson over USB connection</li>
+  <li>Start with user space application, build it up to a TTY kernel module to act as an interace for the arduino to the Jetson</li>
+  <li>Set up read/write commands between the two devices via the kernel module</li>
+</ul>
+
+  </div>
+
+</article>
 
       </div>
     </div>
