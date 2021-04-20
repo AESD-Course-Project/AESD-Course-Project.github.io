@@ -119,25 +119,45 @@
 
 <p>The video demonstrates:</p>
 <ul>
-  <li>Setup of widget X</li>
-  <li>Connect to widget X using widget Y</li>
-  <li>Show feature Z of Widget X</li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/TinyML.md">Introduction to TinyML for Embedded Systems on NVIDIA Jetson Nano and Arduino 33 BLE Sense</a></li>
+  <li>Arduino-CLI, custom Arduino-library setup and integration for human detection
+    <ul>
+      <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/arduino_setup.md">Hardware and CLI setup with custom library</a></li>
+      <li><a href="https://github.com/arpit6232/visualwakeup_aesd">Neural Network Traning and Porting for Micro-controllers</a></li>
+    </ul>
+  </li>
+  <li>OE4T meta-tegra setup for , API setup &amp; interface for custom uartserver
+    <ul>
+      <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/24">API, setup and response</a></li>
+      <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232/tree/main/jetson_display">GPIO based feedback / Seven-Segment Display for human detection on Jetson Nano</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-arpit6232/tree/main/wifi_driver">Attempt at Dummy fullmac linux wifi driver for cfg80211 USB Wifi Module</a></li>
+  <li><a href="https://github.com/cu-ecen-5013/final-project-CalebProvost/tree/yocto-layer">Yocto Integration with systemd based Init Script for peripheral during boot</a></li>
 </ul>
 
 <h2 id="challenges">Challenges</h2>
 <p>My most difficult challenge when implementing this project were:</p>
 <ul>
-  <li>Challenge 1</li>
-  <li>Challenge 2</li>
-  <li>…</li>
+  <li>Bringing up OE4T meta-tegra on NVIDIA Jetson Nano and Jetson Nano 2GB board using yocto and Docker
+    <ul>
+      <li><a href="https://github.com/OE4T/meta-tegra/discussions/661">OE4T Forum QA</a></li>
+      <li><a href="https://github.com/OE4T/meta-tegra/discussions/653">Camera setup and test</a></li>
+      <li><a href="https://forums.developer.nvidia.com/t/unable-to-boot-up-jetson-board-after-frc-on-jetson-nano-2gb-board/175113">NVIDIA Forum discussions - 1</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/arduino/ArduinoCore-mbed/issues/176">Arduino CLI setup integration and test on Yocto Image</a></li>
+  <li>Logging state machine between custom UartServer and API response.</li>
+  <li>Tensorflow based Deep Machine Learning for Embedded Systems.</li>
 </ul>
 
 <h2 id="lessons-learned">Lessons Learned</h2>
 <p>The most important topics I learned from this project were:</p>
 <ul>
-  <li>Lesson 1</li>
-  <li>Lesson 2</li>
-  <li>…</li>
+  <li><a href="https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/29">systemd startup scripts for uartserver and arduino-cli</a></li>
+  <li>Custom distro setup and build for NVIDIA OE4T meta-tegra setup</li>
+  <li>Docker setup for amd64, aarch64.</li>
+  <li>GPIO communication.</li>
 </ul>
 
       </div>
