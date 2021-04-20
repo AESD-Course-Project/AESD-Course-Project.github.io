@@ -38,6 +38,5 @@ The Course Project's [Projects](https://github.com/AESD-Course-Project/AESD-Cour
 | [All 4 One Script](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/28)    | Caleb Provost | April 18 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/28?label=&style=for-the-badge) | April 21 |
 | [Add error checking to jetson serial application](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/27)    | Zach Turner | April 18 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/27?label=&style=for-the-badge) | April 22 |
 | [Resolve SystemD Adaption Issue](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/29)    | ALL | April 18 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/29?label=&style=for-the-badge) | April 21 |
-
 | [Integrate i2c-tools to yocto image](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/issues/30)    | Arpit Savarkar | April 18 | ![Status](https://img.shields.io/github/issues/detail/label/AESD-Course-Project/AESD-Course-Project.github.io/30?label=&style=for-the-badge) | April 21 |
 
