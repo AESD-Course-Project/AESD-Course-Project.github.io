@@ -6,10 +6,10 @@ permalink: /src/Arpit-Savarkar's-Final-Project-Video.html
 
 # Overview
 
-This page provide's an overview of Arpit Savarkar contribution to the AESD Final Project <Projectname>
+This page provide's an overview of Arpit Savarkar contribution to the AESD Final Project to Setup Tiny Machine Learning on Arduino Nano 33 BLE Sense without IDE, over Cross compiler to talk to NVIDIA Jetson Nano : [Link to Video](https://drive.google.com/file/d/18ciKNH52RVWI6e7lmfBIayOLS7DNKMx1/view?usp=sharing)
 
-# Video Outline
-See <TODO: insert link to video>
+# Video Outline and Topics Covered 
+[Link to Video](https://drive.google.com/file/d/18ciKNH52RVWI6e7lmfBIayOLS7DNKMx1/view?usp=sharing)
 
 The video demonstrates:
 * [Introduction to TinyML for Embedded Systems on NVIDIA Jetson Nano and Arduino 33 BLE Sense](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/TinyML.md)
@@ -38,5 +38,3 @@ The most important topics I learned from this project were:
 * Custom distro setup and build for NVIDIA OE4T meta-tegra setup
 * Docker setup for amd64, aarch64. 
 * GPIO communication. 
-
-
