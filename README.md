@@ -9,14 +9,14 @@ This project intends to deal with integrating and building a object detection fr
 
 Using low-level micro-controllers is cheap and provides more opportunity (future goal) to scale the product under development and testing providing both financial and engineering benefits. 
 
-NVIDIA Jetson acts as a server for the peripheral boards(clients). The term voting technique indicates that at any given time the reading that is received from the majority of the sensors will be considered for further actions. Two Camera feeds are available to work with one resides on the NVIDIA Jetson and other connected to the Peripheral Board. 
+NVIDIA Jetson acts as a server for the peripheral boards(clients). The term voting technique indicates that at any given time the reading that is received from the majority of the sensors will be considered for further actions. 
 
 Major Goals:
 
 - Yocto to compile meta-tegra.
 - Running Tegra-demo-distro with Arduino Setup.
 - Setup Camera board and Communication.
-- Build deep-stream or opencv (hardware accelerated) running on Jetson Nano. 
+- Create custom UART-server, API for integration and communication with externel micro-controller. 
 - Run AI Image recognition project working with on image on Host/Hub (Jetson) and/or Arduino BLE 33 with Camera. 
 
 System works as a hard real time system, which captures camera feed at set time interval irrespective of how much time the sensors take to send data over to Nano. The overaching goal of this project would be create a Hub and Client mechanism such that machine learning can be deployed on micro-controllers with and without GPU's. 
@@ -32,14 +32,17 @@ System works as a hard real time system, which captures camera feed at set time 
 ### Functional Block Diagrams
 See Software Block Diagram
 
+### API 
+[API](https://user-images.githubusercontent.com/55374040/114886875-2d5b2c00-9dc5-11eb-9a9e-b8660942228f.png)
+
 ## Target Build System 
 We intend to use Yocto as the bring up tool to generate Linux image on NVIDIA Jetson Nano.
 
 ## Hardware Platform
 Intended hardware platforms for this project:
 
-- [Jetson Nano](https://developer.nvidia.com/embedded/jetson-nano-2gb-developer-kit)
-- [Arduino Nano 33 BLE](https://store.arduino.cc/usa/tiny-machine-learning-kit)
+- [Jetson Nano 2GB Board](https://github.com/cu-ecen-5013/final-project-CalebProvost/blob/dl4t/Docker-Scratch-N-Sniff.md)
+- [Arduino Nano 33 BLE](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/arduino_setup.md)
 - [OV7675 Camera](https://www.arducam.com/docs/camera-breakout-board/0-3mp-ov7675/)
 
 ## Open Source Projects 
@@ -65,7 +68,7 @@ Intended hardware platforms for this project:
 - [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/TinyML.md) <sub>[Markdown](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/TinyML.md)</sub>
 
 ## Shared Material 
-- [Flashing Image to SD Card](https://github.com/cu-ecen-5013/buildroot-assignments-base/wiki/Flashing-Images-to-SDCard)
+- [Flashing Image to SD Card for Jetson Nano](https://github.com/OE4T/meta-tegra/wiki/Flashing-the-Jetson-Dev-Kit)
 
 ## Source Code Organization 
 - [Project Webpage](https://AESD-Course-Project.github.io): Dynamically Generated Documentation
@@ -92,20 +95,3 @@ Intended hardware platforms for this project:
 ## Schedule Page
 - [Project Schedule](src/Project-Schedule.md): Project Schedule 
 
-
-<!-- ### Communication Between Subsystems
-Couple of options:
-
-* Serial communication between Jetson and Arduino
-  * Simplist electrical connection, connect USBA on Jetson to MicroUSB on Arduino
-  * Use TTY device on Jetson to communicate serially with Arduino
-  * Could create our own daemon to interact with the TTY device
-
-* I2C between Jetson and Arduino
-  * Lower level protocol, but still supported by both ends
-  * Would need to research how to interact with I2C communication from linux on Jetson
-
-* Potential Stretch (and a big stretch at that)
-  * Install WiFi/Bluettoth network card onto Jetson board
-  * Communicate with Arduino over Bluetooth 
-  * https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/ -->
