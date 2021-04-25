@@ -61,11 +61,13 @@ Intended hardware platforms for this project:
 - Init Scripts and Rootfs Overlays
 
 ## New Content 
-- [Yocto Image for Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/install_jetson_yocto.md) <sub>[Markdown](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/install_jetson_yocto.md)</sub> 
-- Creating Modules and scripts for Arduino BLE 33 
-- [Interface for Jetson and Arduino](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/arduino_setup.md) <sub>[Markdown](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/arduino_setup.md)</sub>
-- Deplying Tiny Machine Learning (TinyML)
-- [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/TinyML.md) <sub>[Markdown](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/TinyML.md)</sub>
+- [Yocto Image for Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/install_jetson_yocto.md)
+-  [Yocto Image for Jetson Docker](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/Docker-Scratch-N-Sniff.md)
+- [Creating Modules and scripts for Arduino BLE 33](https://github.com/arpit6232/arduino-library)
+- [Custom UART-Server](https://github.com/cu-ecen-5013/final-project-ZachTurner07/tree/develop)
+- [Interface for Jetson and Arduino](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/arduino_setup.md) 
+- [Case study for TinyML](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/TinyML.md) 
+- [Deploying TinyML](https://github.com/arpit6232/visualwakeup_aesd)
 
 ## Shared Material 
 - [Flashing Image to SD Card for Jetson Nano](https://github.com/OE4T/meta-tegra/wiki/Flashing-the-Jetson-Dev-Kit)
