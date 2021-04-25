@@ -83,9 +83,10 @@ Intended hardware platforms for this project:
   - GPIO communication to show successful inferencing... how it interfaces to BSP
   - Trigger on board LED for demonstration purposes
 - Arpit: Machine Learning Framework and TinyML Setup and yocto compatibility. 
-  - Dive Deep into Tiny Machine Learning deployment
-  - Integrate Camera and peripheral to detect Person in frame. 
+  - Tiny Machine Learning deployment - [Model creation, Neural network training, Tensorflow Micro] 
+  - Computer Vision : Integrate Camera and peripheral to detect Person in frame. 
   - Code Porting and Tensorflow dependencies. 
+  - { Side Project }: Dummy linux wifi driver for cfg80211 USB Wifi Module
 
 
 ## Schedule Page
