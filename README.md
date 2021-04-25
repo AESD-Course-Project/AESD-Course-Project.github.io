@@ -61,7 +61,7 @@ Intended hardware platforms for this project:
 - Init Scripts and Rootfs Overlays
 
 ## New Content 
-- [Yocto Image for Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/tree/gh-pages/src/install_jetson_yocto.md)
+- [Yocto Image for Jetson Nano](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/install_jetson_yocto.md)
 -  [Yocto Image for Jetson Docker](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/Docker-Scratch-N-Sniff.md)
 - [Creating Modules and scripts for Arduino BLE 33](https://github.com/arpit6232/arduino-library)
 - [Custom UART-Server](https://github.com/cu-ecen-5013/final-project-ZachTurner07/tree/develop)
