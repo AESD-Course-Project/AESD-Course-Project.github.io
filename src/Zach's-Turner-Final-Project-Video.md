@@ -1,3 +1,9 @@
+---
+layout: default
+title: Zach-Turner's-Final-Video-Page
+permalink: /src/Zach's-Turner-Final-Project-Video.html
+---
+
 # Overview
 
 This page provides an overview of Zach Turner's contribution to the AESD Final Project Human Recognition using the Nvidia Jetson and Arduino BLE 33 Sense.
