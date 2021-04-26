@@ -78,10 +78,7 @@ Intended hardware platforms for this project:
 ## Group's Overview 
 ### Team Project Members 
 - Caleb: Yocto Image Setup and build for Jetson Tegra, Dockerfile 1-click-image
-- Zach: Communication Between Subsystems (Serial/I2C/USB/Bluetooth)
-  - serial communication between subsystems
-  - GPIO communication to show successful inferencing... how it interfaces to BSP
-  - Trigger on board LED for demonstration purposes
+- Zach: Serial communication Between Subsystems
 - Arpit: Machine Learning Framework and TinyML Setup and yocto compatibility. 
   - Dive Deep into Tiny Machine Learning deployment
   - Integrate Camera and peripheral to detect Person in frame. 
