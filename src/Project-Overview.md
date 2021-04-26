@@ -92,6 +92,6 @@ Intended hardware platforms for this project:
 - [Project Schedule](Project-Schedule)  
 
 ## Student Video Demos
-- [Arpit Savarkar's Video](Arpit-Savarkar's-Final-Project-Video.md)
-- [Caleb Provost's Video](Caleb-Provost's-Final-Video-Page.md)
-- [Zach Turner's Video](Zach's-Turner-Final-Project-Video.md)
+- [Arpit Savarkar's Video](Arpit-Savarkar's-Final-Project-Video)
+- [Caleb Provost's Video](Caleb-Provost's-Final-Video-Page)
+- [Zach Turner's Video](Zach's-Turner-Final-Project-Video)
