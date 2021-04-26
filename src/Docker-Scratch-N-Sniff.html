@@ -112,10 +112,8 @@
       <div class="wrapper">
         <h1 id="from-scratch">From Scratch</h1>
 
-<p>Its as easy as <a href="#Build-the-Dockerized-Yocto-for-Jetson">building the docker image</a>, <a href="#Run-the-Docker-Container-to-Build-L4T-Image">having docker build L4T</a>, and <a href="#Flash-the-SD-Card">flashing the SD Card</a>!<br />
-<sub>With the caviot that <strong><em>maybe</em></strong> you’ll need to <a href="#Install-Docker">install docker</a> if you don’t already have it</sub></p>
-
-<hr />
+<p>Its as easy as <a href="#Pull-the-Docker-Container">pulling the docker container</a>, <a href="#Run-the-Docker-Container-to-Build-Our-Project-Image">having docker build our project image</a>, and <a href="#Flash-the-SD-Card">flashing the SD Card</a>!<br />
+<sub>With the caviot that <strong><em>maybe</em></strong> you’ll need to <a href="#Install-Docker">install docker</a> if you don’t already have it <a href="Install-Docker">see here</a></sub></p>
 
 <h2 id="important-preamble">Important Preamble</h2>
 
@@ -134,11 +132,31 @@ This user guide covers two revisions of the developer kit:</p>
 
 <p>We are targeting to build for the module, which means the default was set to <code class="language-plaintext highlighter-rouge">P3448-0003</code>.</p>
 
-<hr />
+<h2 id="pull-the-docker-container">Pull the Docker Container</h2>
+
+<p>Get the docker container with everything neccessary to build by executing <code class="language-plaintext highlighter-rouge">docker pull calebprovost/dockter-l4t:sdk_installed</code> (be prepared… its ~10G).</p>
+
+<p>If you wish to adjust the environments and/or the docker container, you can find the source here: <a href="https://github.com/CalebProvost/dockter-l4t">CalebProvost/dockter-l4t</a><br />
+<sub><strong>Info:</strong> Executing the <code class="language-plaintext highlighter-rouge">build.sh</code> outside of the Docker container will fail. It is a script which runs automatically by and inside the docker container itself.</sub></p>
+
+<h2 id="run-the-docker-container-to-build-our-project-image">Run the Docker Container to Build Our Project Image</h2>
+
+<p>Run the following command to build our project image for the <code class="language-plaintext highlighter-rouge">jetson-nano-2gb-devkit</code> board with our custom program code in it.
+<code class="language-plaintext highlighter-rouge">docker run -it -v $PWD:/home/user/build --name dl4t calebprovost/dockter-l4t:sdk_installed bash -c ./build.sh</code></p>
+
+<p>If you’d like to build the OE4T demo image without our layer and code, execute the container eithout the appended command like so:<br />
+<code class="language-plaintext highlighter-rouge">docker run -it -v $PWD:/home/user/build --rm calebprovost/dockter-l4t:sdk_installed</code></p>
+
+<h2 id="flash-the-sd-card">Flash the SD Card</h2>
+
+<p>The SD Card image is created using the L4T SD Card tools and placed in the root of this directory. It’s default name will be “demo-image-full-jetson-nano-2gb-devkit.img” but will follow the following naming convention if the defaults were overwritten in the prior steps: <code class="language-plaintext highlighter-rouge">"${BUILD_IMAGE}-${MACHINE}.img"</code></p>
+
+<p>Use your flavor of SD Card flashing tool (like balenaEtcher for Windows or <code class="language-plaintext highlighter-rouge">dd</code> for linux) and flash the provided image onto an SD card and insert into the Jetson nano to start having fun.</p>
+
+<p>Note: An SD Card sized ~16GB will be needed. We found that our image was 300MB too large and thus used a 32GB card instead.</p>
 
 <h2 id="install-docker">Install Docker</h2>
 
-<hr />
 <p>See the latest installation method for your distro from Docker’s website.<br />
 The following was used to install on the <strong><em>host</em></strong> build system:</p>
 
@@ -153,7 +171,7 @@ The following was used to install on the <strong><em>host</em></strong> build sy
     <p>Add Docker Keys</p>
 
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>curl <span class="nt">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg | <span class="se">\</span>
-  <span class="nb">sudo </span>gpg <span class="nt">--dearmor</span> <span class="nt">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg<span class="sb">`</span>
+  <span class="nb">sudo </span>gpg <span class="nt">--dearmor</span> <span class="nt">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg
 </code></pre></div>    </div>
   </li>
   <li>
@@ -190,47 +208,11 @@ Most importantly, create a new group called docker and add your username to it. 
   <li>
     <p>Then restart Docker with:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>systemctl daemon-reload
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>systemctl daemon-reload
   <span class="nb">sudo </span>systemctl restart docker
 </code></pre></div>    </div>
   </li>
 </ul>
-
-<h2 id="build-the-dockerized-yocto-for-jetson">Build the Dockerized Yocto for Jetson</h2>
-
-<p><sub><strong>Info:</strong> Executing the <code class="language-plaintext highlighter-rouge">tegra_install_n_build.sh</code> outside of the Docker container will fail. It is a script which runs automatically by and inside the docker container itself.</sub></p>
-
-<ul>
-  <li>
-    <p>Run the following to build the docker image with the default configuration:<br />
-<code class="language-plaintext highlighter-rouge">docker build -t yocto-tegra:spring21 .</code></p>
-
-    <p>If you’d like to override the default branch, machine, target distro, or other settings, you can do so by overwriting their values with the argument tag <code class="language-plaintext highlighter-rouge">--build-arg VAR=value</code>. Below is an example provided to demonstrate this. See the header inside <code class="language-plaintext highlighter-rouge">tegra_install_n_build.sh</code> for defaults and overwritable variables.</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker build <span class="nt">-t</span> yocto-tegra:spring21 <span class="nt">--build-arg</span> <span class="nv">MACHINE</span><span class="o">=</span>jetson-nano-2gb-devkit <span class="se">\</span>
-          <span class="nt">--build-arg</span> <span class="nv">BRANCH</span><span class="o">=</span>master <span class="nt">--build-arg</span> <span class="nv">BUILD_IMAGE</span><span class="o">=</span>demo-image-full <span class="se">\</span>
-          <span class="nt">--build-arg</span> <span class="nv">DISTRO</span><span class="o">=</span><span class="s2">"tegrademo-mender build-tegrademo-mender"</span> <span class="se">\</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="run-the-docker-container-to-build-l4t-image">Run the Docker Container to Build L4T Image</h2>
-
-<p>Start the Docker container with the command below and it will kick off an installation of nVidia’s SDK and build the L4T yocto image.<br />
-You will be prompted to follow the link and log into the nVidia developer’s account which will then validate the install.<br />
-Note: The following example maps the build output directory to the directory where this Dockerfile is executed</p>
-
-<p><code class="language-plaintext highlighter-rouge">docker run -it --rm -v $PWD:/home/aesd/ --name yl4t yocto-tegra:spring21</code></p>
-
-<p><sub><strong>Hint:</strong> You can remove the <code class="language-plaintext highlighter-rouge">--rm</code> flag from the above command to keep the container instance once it’s complete and attach to it for your own modifications/build edits</sub></p>
-
-<h2 id="flash-the-sd-card">Flash the SD Card</h2>
-
-<p>The SD Card image is created using the L4T SD Card tools and placed in the root of this directory. It’s default name will be “demo-image-full-jetson-nano-2gb-devkit.img” but will follow the following naming convention if the defaults were overwritten in the prior steps: <code class="language-plaintext highlighter-rouge">"${BUILD_IMAGE}-${MACHINE}.img"</code></p>
-
-<p>Use your flavor of SD Card flashing tool (like balenaEtcher for Windows or <code class="language-plaintext highlighter-rouge">dd</code> for linux) and flash the provided image onto an SD card and insert into the Jetson nano to start having fun.</p>
-
-<p>Note: An SD Card sized ~16GB will be needed. We found that our image was 300MB too large and thus used a 32GB card instead.</p>
 
       </div>
     </div>
