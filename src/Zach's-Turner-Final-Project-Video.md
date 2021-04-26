@@ -12,8 +12,8 @@ This page provides an overview of Zach Turner's contribution to the AESD Final P
 See [Highlight Video](https://drive.google.com/file/d/1z3vqiXsShyruKczYebtUcMQlt5CDPW2r/view?usp=sharing)
 
 The video demonstrates:
-* cross-compiling application from host machine to target board
-* serial communication between Nvidia Jetson and Arduino
+* [cross-compiling application](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/compiling_for_jetson.md) from host machine to target board
+* [Serial communication](https://github.com/AESD-Course-Project/AESD-Course-Project.github.io/blob/master/src/communication-icd.md) between Nvidia Jetson and Arduino
 * Logging serial messages from human recognition on Nvidia Jetson
 
 ## Challenges
