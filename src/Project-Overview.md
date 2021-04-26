@@ -91,20 +91,7 @@ Intended hardware platforms for this project:
 ## Schedule Page
 - [Project Schedule](Project-Schedule)  
 
-
-<!-- ### Communication Between Subsystems
-Couple of options:
-
-* Serial communication between Jetson and Arduino
-  * Simplist electrical connection, connect USBA on Jetson to MicroUSB on Arduino
-  * Use TTY device on Jetson to communicate serially with Arduino
-  * Could create our own daemon to interact with the TTY device
-
-* I2C between Jetson and Arduino
-  * Lower level protocol, but still supported by both ends
-  * Would need to research how to interact with I2C communication from linux on Jetson
-
-* Potential Stretch (and a big stretch at that)
-  * Install WiFi/Bluettoth network card onto Jetson board
-  * Communicate with Arduino over Bluetooth 
-  * https://www.jetsonhacks.com/2019/04/08/jetson-nano-intel-wifi-and-bluetooth/ -->
+## Student Video Demos
+- [Arpit Savarkar's Video](Arpit-Savarkar's-Final-Project-Video.md)
+- [Caleb Provost's Video](Caleb-Provost's-Final-Video-Page.md)
+- [Zach Turner's Video](Zach's-Turner-Final-Project-Video.md)
